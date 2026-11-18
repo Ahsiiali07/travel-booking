@@ -145,9 +145,9 @@
 
         /* Figma Make Detail & Action Buttons */
         .btn-detail-figma {
-            background: #f8fafc;
-            border: 1.5px solid #e2e8f0;
-            color: #475569;
+            background: #fff0ec;
+            border: 1.5px solid #ffd5cc;
+            color: #e54e2e !important;
             font-weight: 600;
             font-size: 0.82rem;
             padding: 0.42rem 0.95rem;
@@ -156,13 +156,30 @@
             display: inline-flex;
             align-items: center;
             gap: 0.35rem;
-            transition: all 0.2s ease;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .btn-detail-figma:hover {
-            background: #f1f5f9;
-            border-color: #cbd5e1;
-            color: #0f172a;
+            background: #ff6b4a;
+            border-color: #ff6b4a;
+            color: #ffffff !important;
             transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 107, 74, 0.3);
+        }
+
+        .btn-outline-secondary {
+            background-color: #fff0ec !important;
+            border-color: #ffd5cc !important;
+            color: #e54e2e !important;
+            border-radius: 9999px !important;
+            font-weight: 600 !important;
+            transition: all 0.2s ease !important;
+        }
+        .btn-outline-secondary:hover {
+            background-color: #ff6b4a !important;
+            border-color: #ff6b4a !important;
+            color: #ffffff !important;
+            box-shadow: 0 4px 12px rgba(255, 107, 74, 0.25) !important;
+            transform: translateY(-1px) !important;
         }
 
         .btn-book-figma {
