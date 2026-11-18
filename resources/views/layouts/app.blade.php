@@ -6,10 +6,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'TravelBooking - Pakistan & Global Travel Portal') | VU CS619 Final Year Project</title>
 
-    <!-- Google Fonts: Plus Jakarta Sans -->
+    <!-- Google Fonts: DM Sans & Manrope (Figma Make Theme) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,26 +20,27 @@
 
     <style>
         :root {
-            --primary: #4f46e5;           /* Electric Indigo */
-            --primary-dark: #3730a3;      /* Deep Royal Indigo */
-            --primary-light: #eef2ff;     /* Soft Indigo Tint */
-            --primary-hover: #4338ca;
-            --accent: #06b6d4;            /* Vibrant Cyan */
-            --accent-dark: #0891b2;
-            --accent-gradient: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
-            --accent-gradient-hover: linear-gradient(135deg, #4338ca 0%, #0891b2 100%);
-            --dark: #0b0f19;              /* Midnight Obsidian */
-            --dark-card: #111827;
+            --primary: #ff6b4a;            /* Figma Coral / Warm Orange */
+            --primary-hover: #ee5b3c;
+            --primary-dark: #e85335;
+            --primary-light: #fff0ec;      /* Warm Peach Tint */
+            --primary-subtle: #fff0ec;
+            --navy: #102d45;               /* Figma Deep Navy */
+            --navy-dark: #07192b;          /* Darker Midnight Navy */
+            --navy-card: #15344e;          /* Card Navy */
+            --gold: #ffb64d;               /* Warm Gold Accent */
+            --bg-page: #fafaf7;            /* Figma Creamy Off-White */
+            --text-main: #102a43;          /* Deep Slate Navy Text */
+            --text-muted: #64748b;
             --slate-border: #e2e8f0;
-            --light-bg: #f8fafc;
-            --card-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.07), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
-            --card-shadow-hover: 0 20px 30px -10px rgba(79, 70, 229, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --card-shadow: 0 10px 30px -5px rgba(16, 45, 69, 0.06), 0 4px 6px -2px rgba(16, 45, 69, 0.02);
+            --card-shadow-hover: 0 20px 35px -8px rgba(16, 45, 69, 0.12), 0 8px 12px -4px rgba(16, 45, 69, 0.04);
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--light-bg);
-            color: #334155;
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -47,46 +48,68 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        h1, h2, h3, h4, .font-display, .section-title {
+            font-family: 'Manrope', 'DM Sans', sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        .section-kicker {
+            color: #e85335;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 3.8vw, 2.85rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: #102a43;
+        }
+
         /* Top Project Banner */
         .project-top-bar {
-            background: linear-gradient(90deg, #090d16 0%, #1e1b4b 100%);
+            background: #07192b;
             font-size: 0.8rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         /* Modern Navbar */
         .main-navbar {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(250, 250, 247, 0.95);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 1px 15px rgba(0, 0, 0, 0.04);
-            padding: 0.85rem 0;
+            box-shadow: 0 1px 15px rgba(16, 45, 69, 0.04);
+            padding: 0.9rem 0;
             position: sticky;
             top: 0;
             z-index: 1030;
             transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
         }
 
         .navbar-brand {
+            font-family: 'Manrope', sans-serif;
             font-weight: 800;
             font-size: 1.45rem;
-            color: #0f172a !important;
+            color: #102a43 !important;
             display: flex;
             align-items: center;
-            gap: 0.55rem;
+            gap: 0.65rem;
             letter-spacing: -0.02em;
         }
 
         .brand-icon-wrapper {
             width: 38px;
             height: 38px;
-            background: var(--accent-gradient);
-            border-radius: 10px;
+            background: #ff6b4a;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+            box-shadow: 0 4px 12px rgba(255, 107, 74, 0.35);
             font-size: 1.05rem;
         }
 
@@ -95,25 +118,25 @@
             font-size: 0.92rem;
             color: #475569 !important;
             padding: 0.55rem 0.95rem !important;
-            border-radius: 10px;
+            border-radius: 9999px;
             transition: all 0.2s ease;
         }
 
         .nav-link:hover, .nav-link.active {
-            color: var(--primary) !important;
-            background-color: var(--primary-light);
+            color: #e54e2e !important;
+            background-color: #fff0ec;
         }
 
-        /* Modern Gradient Buttons */
+        /* Modern Coral Pill Buttons (Figma Make) */
         .btn-primary-custom {
-            background: var(--accent-gradient);
+            background: #ff6b4a;
             border: none;
             color: #ffffff !important;
             font-weight: 600;
             padding: 0.65rem 1.4rem;
-            border-radius: 12px;
+            border-radius: 9999px;
             transition: all 0.25s ease;
-            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+            box-shadow: 0 4px 14px rgba(255, 107, 74, 0.3);
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -121,31 +144,32 @@
         }
 
         .btn-primary-custom:hover {
-            background: var(--accent-gradient-hover);
+            background: #ee5b3c;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.45);
+            box-shadow: 0 6px 20px rgba(255, 107, 74, 0.45);
+            color: #ffffff !important;
         }
 
         .btn-outline-custom {
-            border: 1.5px solid var(--primary);
-            color: var(--primary) !important;
+            border: 1.5px solid #ff6b4a;
+            color: #ff6b4a !important;
             font-weight: 600;
-            border-radius: 12px;
+            border-radius: 9999px;
             padding: 0.6rem 1.3rem;
             transition: all 0.2s;
             background: transparent;
         }
 
         .btn-outline-custom:hover {
-            background: var(--primary);
+            background: #ff6b4a;
             color: #ffffff !important;
-            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
+            box-shadow: 0 4px 14px rgba(255, 107, 74, 0.25);
         }
 
         /* Cards & Surfaces */
         .card-custom {
             border: 1px solid rgba(226, 232, 240, 0.85);
-            border-radius: 18px;
+            border-radius: 24px;
             background: #ffffff;
             box-shadow: var(--card-shadow);
             transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
@@ -155,30 +179,32 @@
         .card-custom:hover {
             transform: translateY(-4px);
             box-shadow: var(--card-shadow-hover);
-            border-color: rgba(99, 102, 241, 0.4);
+            border-color: rgba(255, 107, 74, 0.3);
         }
 
-        /* Color Badges */
-        .badge-soft-primary { background: #eef2ff; color: #4f46e5; font-weight: 600; }
-        .badge-soft-cyan    { background: #ecfeff; color: #0891b2; font-weight: 600; }
-        .badge-soft-success { background: #ecfdf5; color: #059669; font-weight: 600; }
-        .badge-soft-warning { background: #fffbeb; color: #d97706; font-weight: 600; }
-        .badge-soft-danger  { background: #fef2f2; color: #dc2626; font-weight: 600; }
+        /* Color Badges (Figma Make Style) */
+        .badge-soft-primary { background: #fff0ec; color: #e54e2e; font-weight: 700; border-radius: 9999px; padding: 0.35rem 0.75rem; }
+        .badge-soft-cyan    { background: #eff6ff; color: #2563eb; font-weight: 700; border-radius: 9999px; padding: 0.35rem 0.75rem; }
+        .badge-soft-success { background: #ecfdf5; color: #047857; font-weight: 700; border-radius: 9999px; padding: 0.35rem 0.75rem; }
+        .badge-soft-warning { background: #fffbeb; color: #b45309; font-weight: 700; border-radius: 9999px; padding: 0.35rem 0.75rem; }
+        .badge-soft-danger  { background: #fef2f2; color: #dc2626; font-weight: 700; border-radius: 9999px; padding: 0.35rem 0.75rem; }
 
         /* Form Controls Overhaul */
         .form-control, .form-select {
-            border-radius: 12px;
+            border-radius: 14px;
             border: 1px solid #cbd5e1;
-            padding: 0.65rem 0.95rem;
+            padding: 0.68rem 1rem;
             font-size: 0.93rem;
-            color: #1e293b;
+            color: #102a43;
             transition: all 0.2s ease;
+            background-color: #fafaf8;
         }
 
         .form-control:focus, .form-select:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+            border-color: #ff6b4a;
+            box-shadow: 0 0 0 4px rgba(255, 107, 74, 0.15);
             outline: none;
+            background-color: #ffffff;
         }
 
         /* Airport Search Styles */
@@ -188,37 +214,40 @@
 
         .airport-input-group .form-control {
             border-radius: 0;
+            background-color: #ffffff;
         }
 
         .airport-input-group .input-group-text:first-child {
-            border-top-left-radius: 12px;
-            border-bottom-left-radius: 12px;
+            border-top-left-radius: 14px;
+            border-bottom-left-radius: 14px;
+            background-color: #ffffff;
+            color: #ff6b4a !important;
         }
 
         .airport-input-group .airport-toggle-btn {
-            border-top-right-radius: 12px;
-            border-bottom-right-radius: 12px;
+            border-top-right-radius: 14px;
+            border-bottom-right-radius: 14px;
             background: #ffffff;
         }
 
         .airport-dropdown-menu {
-            border-radius: 14px !important;
+            border-radius: 16px !important;
             border: 1px solid #cbd5e1 !important;
-            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.05) !important;
+            box-shadow: 0 15px 35px -5px rgba(16, 45, 69, 0.15), 0 5px 15px rgba(0, 0, 0, 0.05) !important;
         }
 
         .airport-option:hover {
-            background-color: var(--primary-light) !important;
+            background-color: #fff0ec !important;
         }
 
-        /* Footer */
+        /* Footer (Figma Dark Navy) */
         .footer {
-            background: #090d16;
-            color: #94a3b8;
+            background: #102d45;
+            color: #cbd5e1;
             margin-top: auto;
-            padding-top: 3.5rem;
+            padding-top: 4rem;
             padding-bottom: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .footer h5 {
@@ -226,7 +255,7 @@
             font-weight: 700;
             margin-bottom: 1.25rem;
             font-size: 1rem;
-            letter-spacing: -0.01em;
+            font-family: 'Manrope', sans-serif;
         }
 
         .footer a {
@@ -236,20 +265,20 @@
         }
 
         .footer a:hover {
-            color: #38bdf8;
+            color: #ff8b73;
         }
 
         .vu-project-badge {
-            background: var(--accent-gradient);
+            background: #ff6b4a;
             color: white;
             font-size: 0.75rem;
             padding: 0.4rem 0.85rem;
-            border-radius: 20px;
+            border-radius: 9999px;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
             gap: 0.45rem;
-            box-shadow: 0 4px 10px rgba(79, 70, 229, 0.25);
+            box-shadow: 0 4px 10px rgba(255, 107, 74, 0.3);
         }
 
         /* Mobile Responsive Improvements */
@@ -257,8 +286,8 @@
             .navbar-collapse {
                 background: #ffffff;
                 padding: 1.25rem;
-                border-radius: 16px;
-                box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+                border-radius: 20px;
+                box-shadow: 0 15px 30px rgba(16, 45, 69, 0.12);
                 margin-top: 0.75rem;
                 border: 1px solid var(--slate-border);
             }
@@ -275,11 +304,11 @@
     <div class="project-top-bar text-white py-1 px-3">
         <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
             <div>
-                <span class="badge bg-primary text-uppercase me-2 font-monospace">VU CS619</span>
+                <span class="badge bg-danger text-uppercase me-2 font-monospace" style="background-color: #ff6b4a !important;">VU CS619</span>
                 <strong>Final Year Project:</strong> Travel Booking Application using MVC-based Framework (Laravel)
             </div>
             <div class="d-none d-md-block text-light opacity-90">
-                <i class="fa-solid fa-user-tie me-1 text-info"></i> Supervisor: <strong>Sheikh Israr Ahmad</strong> (israr.ahmad@vu.edu.pk)
+                <i class="fa-solid fa-user-tie me-1 text-warning"></i> Supervisor: <strong>Sheikh Israr Ahmad</strong> (israr.ahmad@vu.edu.pk)
             </div>
         </div>
     </div>

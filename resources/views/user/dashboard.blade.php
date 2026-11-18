@@ -26,12 +26,12 @@
             <div class="card card-custom p-3 p-md-4">
                 <div class="d-flex align-items-center justify-content-between mb-2">
                     <span class="text-muted small fw-bold text-uppercase">Flight Schedules</span>
-                    <div class="brand-icon-wrapper" style="width: 38px; height: 38px;">
-                        <i class="fa-solid fa-plane"></i>
+                    <div class="rounded-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: #eff6ff; color: #2563eb;">
+                        <i class="fa-solid fa-plane fs-5"></i>
                     </div>
                 </div>
                 <h3 class="fw-bold text-dark mb-0">{{ $stats['flight_schedules'] }}</h3>
-                <a href="{{ route('user.flight-schedules.index') }}" class="small text-primary text-decoration-none mt-2 d-inline-block fw-semibold">View Schedules &rarr;</a>
+                <a href="{{ route('user.flight-schedules.index') }}" class="small text-decoration-none mt-2 d-inline-block fw-semibold" style="color: #ff6b4a;">View Schedules &rarr;</a>
             </div>
         </div>
 
@@ -39,12 +39,12 @@
             <div class="card card-custom p-3 p-md-4">
                 <div class="d-flex align-items-center justify-content-between mb-2">
                     <span class="text-muted small fw-bold text-uppercase">Hotel Stays</span>
-                    <div class="bg-warning-subtle text-warning p-2 rounded-3" style="width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+                    <div class="rounded-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: #f5f3ff; color: #7c3aed;">
                         <i class="fa-solid fa-hotel fs-5"></i>
                     </div>
                 </div>
                 <h3 class="fw-bold text-dark mb-0">{{ $stats['hotel_schedules'] }}</h3>
-                <a href="{{ route('user.hotel-schedules.index') }}" class="small text-warning text-decoration-none mt-2 d-inline-block fw-semibold">View Hotels &rarr;</a>
+                <a href="{{ route('user.hotel-schedules.index') }}" class="small text-decoration-none mt-2 d-inline-block fw-semibold" style="color: #ff6b4a;">View Hotels &rarr;</a>
             </div>
         </div>
 
@@ -52,12 +52,12 @@
             <div class="card card-custom p-3 p-md-4">
                 <div class="d-flex align-items-center justify-content-between mb-2">
                     <span class="text-muted small fw-bold text-uppercase">Tour Packages</span>
-                    <div class="bg-success-subtle text-success p-2 rounded-3" style="width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+                    <div class="rounded-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: #fff0ec; color: #e54e2e;">
                         <i class="fa-solid fa-umbrella-beach fs-5"></i>
                     </div>
                 </div>
                 <h3 class="fw-bold text-dark mb-0">{{ $stats['package_bookings'] }}</h3>
-                <a href="{{ route('user.package-bookings.index') }}" class="small text-success text-decoration-none mt-2 d-inline-block fw-semibold">View Packages &rarr;</a>
+                <a href="{{ route('user.package-bookings.index') }}" class="small text-decoration-none mt-2 d-inline-block fw-semibold" style="color: #ff6b4a;">View Packages &rarr;</a>
             </div>
         </div>
 
@@ -65,12 +65,12 @@
             <div class="card card-custom p-3 p-md-4">
                 <div class="d-flex align-items-center justify-content-between mb-2">
                     <span class="text-muted small fw-bold text-uppercase">Total Amount Paid</span>
-                    <div class="bg-info-subtle text-info p-2 rounded-3" style="width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+                    <div class="rounded-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: #ecfdf5; color: #059669;">
                         <i class="fa-solid fa-receipt fs-5"></i>
                     </div>
                 </div>
                 <h4 class="fw-bold text-dark mb-0">PKR {{ number_format($stats['total_spent']) }}</h4>
-                <a href="{{ route('user.payments.index') }}" class="small text-info text-decoration-none mt-2 d-inline-block fw-semibold">Payment History &rarr;</a>
+                <a href="{{ route('user.payments.index') }}" class="small text-decoration-none mt-2 d-inline-block fw-semibold" style="color: #ff6b4a;">Payment History &rarr;</a>
             </div>
         </div>
     </div>

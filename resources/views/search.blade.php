@@ -13,19 +13,19 @@
     <!-- Search Tabs -->
     <div class="card card-custom border-0 shadow-sm mb-4">
         <div class="card-body p-2 p-md-3">
-            <ul class="nav nav-pills flex-nowrap overflow-x-auto justify-content-start justify-content-md-start gap-1 pb-1" id="searchMainTabs" role="tablist" style="scrollbar-width: none;">
+            <ul class="nav nav-pills flex-nowrap overflow-x-auto justify-content-start gap-2 pb-1" id="searchMainTabs" role="tablist" style="scrollbar-width: none;">
                 <li class="nav-item">
-                    <a class="nav-link text-nowrap rounded-3 py-2 px-3 fw-bold {{ $tab === 'flights' ? 'active' : '' }}" href="{{ route('search', ['tab' => 'flights']) }}">
-                        <i class="fa-solid fa-plane-departure me-1"></i> Flights ({{ $flights->total() }})
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-nowrap rounded-3 py-2 px-3 fw-bold {{ $tab === 'packages' ? 'active' : '' }}" href="{{ route('search', ['tab' => 'packages']) }}">
+                    <a class="nav-link text-nowrap rounded-pill py-2 px-4 fw-bold {{ $tab === 'packages' ? 'active' : '' }}" href="{{ route('search', ['tab' => 'packages']) }}">
                         <i class="fa-solid fa-umbrella-beach me-1"></i> Vacation Packages ({{ $packages->total() }})
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-nowrap rounded-3 py-2 px-3 fw-bold {{ $tab === 'hotels' ? 'active' : '' }}" href="{{ route('search', ['tab' => 'hotels']) }}">
+                    <a class="nav-link text-nowrap rounded-pill py-2 px-4 fw-bold {{ $tab === 'flights' ? 'active' : '' }}" href="{{ route('search', ['tab' => 'flights']) }}">
+                        <i class="fa-solid fa-plane me-1"></i> Flights ({{ $flights->total() }})
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-nowrap rounded-pill py-2 px-4 fw-bold {{ $tab === 'hotels' ? 'active' : '' }}" href="{{ route('search', ['tab' => 'hotels']) }}">
                         <i class="fa-solid fa-hotel me-1"></i> Hotels ({{ $hotels->total() }})
                     </a>
                 </li>
@@ -47,6 +47,9 @@
                         value="{{ request('origin') }}" 
                         placeholder="e.g. Karachi, Islamabad" 
                         icon="fa-plane" 
+                        iconColor="#0084c7"
+                        badgeBg="#e0f2fe"
+                        badgeColor="#0084c7"
                     />
                 </div>
 
@@ -58,6 +61,9 @@
                         value="{{ request('destination') }}" 
                         placeholder="e.g. Skardu, Dubai" 
                         icon="fa-plane-arrival" 
+                        iconColor="#0084c7"
+                        badgeBg="#e0f2fe"
+                        badgeColor="#0084c7"
                     />
                 </div>
 

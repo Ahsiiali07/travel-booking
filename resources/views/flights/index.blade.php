@@ -25,6 +25,9 @@
                     value="{{ request('origin') }}" 
                     placeholder="e.g. Karachi, Islamabad" 
                     icon="fa-plane" 
+                    iconColor="#0084c7"
+                    badgeBg="#e0f2fe"
+                    badgeColor="#0084c7"
                 />
             </div>
             <div class="col-md-4">
@@ -35,6 +38,9 @@
                     value="{{ request('destination') }}" 
                     placeholder="e.g. Skardu, Dubai" 
                     icon="fa-plane-arrival" 
+                    iconColor="#0084c7"
+                    badgeBg="#e0f2fe"
+                    badgeColor="#0084c7"
                 />
             </div>
             <div class="col-md-2">

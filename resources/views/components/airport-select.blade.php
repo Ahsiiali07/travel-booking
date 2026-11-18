@@ -4,7 +4,11 @@
     'value' => '',
     'placeholder' => 'Select or search Pakistan airport...',
     'label' => null,
-    'icon' => 'fa-plane-departure',
+    'icon' => 'fa-plane',
+    'iconColor' => '#0084c7',
+    'badgeBg' => '#e0f2fe',
+    'badgeColor' => '#0084c7',
+    'clean' => false,
     'required' => false
 ])
 
@@ -15,31 +19,29 @@
 
 <div class="airport-search-wrapper position-relative" id="wrapper-{{ $elementId }}">
     @if($label)
-        <label for="{{ $elementId }}" class="form-label small fw-bold text-muted mb-1 d-flex align-items-center gap-1">
-            <i class="fa-solid {{ $icon }} text-primary"></i>
+        <label for="{{ $elementId }}" class="form-label fw-bold mb-2 d-flex align-items-center gap-2" style="color: #334155; font-size: 0.95rem;">
+            <i class="fa-solid {{ $icon }}" style="color: {{ $iconColor }}; font-size: 1rem;"></i>
             <span>{{ $label }}</span>
             @if($required)<span class="text-danger">*</span>@endif
         </label>
     @endif
 
-    <div class="input-group airport-input-group shadow-2xs">
-        <span class="input-group-text bg-white border-end-0 text-primary ps-3">
-            <i class="fa-solid {{ $icon }}"></i>
-        </span>
+    <div class="position-relative">
         <input 
             type="text" 
             name="{{ $name }}" 
             id="{{ $elementId }}" 
-            class="form-control border-start-0 border-end-0 ps-2 airport-search-input fw-semibold text-dark" 
+            class="form-control airport-search-input figma-style-input text-dark" 
             value="{{ $value }}" 
             placeholder="{{ $placeholder }}" 
             autocomplete="off"
             list="list-{{ $elementId }}"
+            style="border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 0.75rem 2.5rem 0.75rem 1rem; font-size: 0.95rem; font-weight: 500; height: 48px; background: #ffffff; transition: border-color 0.2s, box-shadow 0.2s;"
             @if($required) required @endif
         >
-        <button type="button" class="btn btn-white border border-start-0 text-muted airport-toggle-btn pe-3" tabindex="-1" title="Browse all airports">
-            <i class="fa-solid fa-chevron-down small transition-transform"></i>
-        </button>
+        <span class="position-absolute end-0 top-50 translate-middle-y pe-3 text-muted airport-toggle-icon" style="pointer-events: none;">
+            <i class="fa-solid fa-chevron-down small opacity-50"></i>
+        </span>
     </div>
 
     <!-- Datalist for universal fallback -->
@@ -50,24 +52,24 @@
     </datalist>
 
     <!-- Interactive Searchable Dropdown Popup -->
-    <div class="airport-dropdown-menu shadow-lg border rounded-3 p-2 bg-white" style="display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 1060; max-height: 290px; overflow-y: auto; margin-top: 4px;">
+    <div class="airport-dropdown-menu shadow-lg border rounded-4 p-2 bg-white" style="display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 1060; max-height: 290px; overflow-y: auto; margin-top: 6px; box-shadow: 0 15px 35px rgba(0,0,0,0.18) !important;">
         <div class="px-2 py-1 pb-2 border-bottom mb-1 small text-muted d-flex justify-content-between align-items-center">
-            <span class="fw-bold text-uppercase" style="font-size: 0.72rem; letter-spacing: 0.04em;">Airports of Pakistan & Major Hubs</span>
-            <span class="badge bg-light text-secondary border count-badge">{{ count($airports) }}</span>
+            <span class="fw-bold text-uppercase" style="font-size: 0.72rem; letter-spacing: 0.04em; color: #64748b;">Airports of Pakistan & Hubs</span>
+            <span class="badge border count-badge" style="background: #f8fafc; color: #0f172a;">{{ count($airports) }}</span>
         </div>
         <div class="airport-options-list">
             @foreach($airports as $ap)
-                <div class="airport-option p-2 rounded-2 d-flex justify-content-between align-items-center cursor-pointer" 
+                <div class="airport-option p-2 rounded-3 d-flex justify-content-between align-items-center cursor-pointer" 
                      data-value="{{ $ap['city'] }} ({{ $ap['code'] }})"
                      data-city="{{ strtolower($ap['city']) }}"
                      data-code="{{ strtolower($ap['code']) }}"
                      data-name="{{ strtolower($ap['name']) }}"
                      style="cursor: pointer; transition: background-color 0.15s ease;">
-                    <div>
-                        <div class="fw-bold text-dark small leading-tight">{{ $ap['city'] }}</div>
-                        <div class="text-muted" style="font-size: 0.76rem;">{{ $ap['name'] }}</div>
-                    </div>
-                    <span class="badge bg-primary-subtle text-primary font-monospace fw-bold ms-2">{{ $ap['code'] }}</span>
+                     <div>
+                         <div class="fw-bold text-dark small leading-tight">{{ $ap['city'] }}</div>
+                         <div class="text-muted" style="font-size: 0.76rem;">{{ $ap['name'] }}</div>
+                     </div>
+                     <span class="badge font-monospace fw-bold ms-2" style="background: {{ $badgeBg }}; color: {{ $badgeColor }}; font-size: 0.78rem;">{{ $ap['code'] }}</span>
                 </div>
             @endforeach
         </div>

@@ -6,10 +6,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Admin Dashboard') | TravelBooking Administration Portal</title>
 
-    <!-- Google Fonts: Plus Jakarta Sans -->
+    <!-- Google Fonts: DM Sans & Manrope (Figma Make Theme) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,31 +20,38 @@
 
     <style>
         :root {
-            --primary: #4f46e5;
-            --primary-dark: #3730a3;
-            --primary-light: #eef2ff;
-            --accent: #06b6d4;
-            --accent-gradient: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
-            --sidebar-bg: #090d16;
-            --sidebar-width: 270px;
+            --primary: #ff6b4a;            /* Figma Coral / Warm Orange */
+            --primary-hover: #ee5b3c;
+            --primary-dark: #e85335;
+            --primary-light: #fff0ec;      /* Warm Peach Tint */
+            --sidebar-bg: #102d45;         /* Figma Deep Navy */
+            --sidebar-width: 260px;
+            --bg-body: #f4f6f8;            /* Figma App Shell Gray */
+            --text-main: #102a43;
             --slate-border: #e2e8f0;
-            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -2px rgba(0, 0, 0, 0.02);
-            --card-shadow-hover: 0 12px 20px -5px rgba(79, 70, 229, 0.1);
+            --card-shadow: 0 4px 6px -1px rgba(16, 45, 69, 0.03), 0 2px 4px -2px rgba(16, 45, 69, 0.02);
+            --card-shadow-hover: 0 12px 24px -5px rgba(255, 107, 74, 0.12);
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #f8fafc;
-            color: #334155;
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
             min-height: 100vh;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Sidebar Styling */
+        h1, h2, h3, h4, h5, .font-display {
+            font-family: 'Manrope', 'DM Sans', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        /* Sidebar Styling (Figma App Shell) */
         .admin-sidebar {
             width: var(--sidebar-width);
             background: var(--sidebar-bg);
-            color: #94a3b8;
+            color: rgba(255, 255, 255, 0.7);
             position: fixed;
             top: 0;
             bottom: 0;
@@ -52,55 +59,59 @@
             z-index: 1050;
             overflow-y: auto;
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
         }
 
         .sidebar-brand {
-            padding: 1.35rem 1.4rem;
+            padding: 1.4rem 1.3rem;
             color: #ffffff;
+            font-family: 'Manrope', sans-serif;
             font-weight: 800;
-            font-size: 1.28rem;
+            font-size: 1.3rem;
             display: flex;
             align-items: center;
             gap: 0.65rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            letter-spacing: -0.02em;
         }
 
         .brand-icon-wrapper {
-            width: 34px;
-            height: 34px;
-            background: var(--accent-gradient);
-            border-radius: 9px;
+            width: 36px;
+            height: 36px;
+            background: #ff6b4a;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 0.95rem;
+            box-shadow: 0 4px 12px rgba(255, 107, 74, 0.35);
         }
 
         .sidebar-menu {
             padding: 1rem 0.85rem;
             list-style: none;
             margin: 0;
+            flex-grow: 1;
         }
 
         .sidebar-heading {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             font-weight: 700;
-            color: #64748b;
-            padding: 0.85rem 0.85rem 0.4rem;
-            letter-spacing: 0.06em;
+            color: rgba(255, 255, 255, 0.45);
+            padding: 0.85rem 0.85rem 0.35rem;
+            letter-spacing: 0.08em;
         }
 
         .sidebar-link {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
-            color: #94a3b8;
-            padding: 0.7rem 0.9rem;
-            border-radius: 10px;
+            gap: 0.75rem;
+            color: rgba(255, 255, 255, 0.65);
+            padding: 0.7rem 0.95rem;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 500;
             font-size: 0.92rem;
@@ -110,20 +121,20 @@
 
         .sidebar-link:hover {
             color: #ffffff;
-            background: rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.07);
         }
 
         .sidebar-link.active {
             color: #ffffff;
-            background: var(--accent-gradient);
+            background: #ff6b4a;
             font-weight: 600;
-            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
         }
 
         .sidebar-link i {
-            width: 20px;
+            width: 18px;
             text-align: center;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         /* Layout Structure */
@@ -136,9 +147,9 @@
         }
 
         .admin-header {
-            background: rgba(255, 255, 255, 0.96);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--slate-border);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
             padding: 0.9rem 1.75rem;
             position: sticky;
             top: 0;
@@ -150,11 +161,11 @@
             flex-grow: 1;
         }
 
-        /* Modern Card Styling */
+        /* Modern Card Styling (Figma rounded-2xl) */
         .card-stat {
             background: #ffffff;
-            border: 1px solid var(--slate-border);
-            border-radius: 16px;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            border-radius: 18px;
             padding: 1.4rem;
             box-shadow: var(--card-shadow);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -163,13 +174,13 @@
         .card-stat:hover {
             transform: translateY(-3px);
             box-shadow: var(--card-shadow-hover);
-            border-color: rgba(99, 102, 241, 0.3);
+            border-color: rgba(255, 107, 74, 0.25);
         }
 
         .card-admin {
             background: #ffffff;
-            border: 1px solid var(--slate-border);
-            border-radius: 16px;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            border-radius: 18px;
             box-shadow: var(--card-shadow);
             overflow: hidden;
         }
@@ -177,35 +188,36 @@
         .card-admin-header {
             padding: 1.2rem 1.5rem;
             background: #ffffff;
-            border-bottom: 1px solid var(--slate-border);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
-        /* Clean Admin Tables */
+        /* Clean Admin Tables (Figma Style) */
         .table-admin th {
-            font-size: 0.78rem;
+            font-size: 0.72rem;
             text-transform: uppercase;
             font-weight: 700;
             color: #64748b;
-            background: #f8fafc;
-            border-bottom: 1px solid var(--slate-border);
+            background: #fafaf8;
+            border-bottom: 1px solid #e2e8f0;
             padding: 0.9rem 1.1rem;
-            letter-spacing: 0.03em;
+            letter-spacing: 0.05em;
         }
 
         .table-admin td {
             padding: 0.95rem 1.1rem;
             vertical-align: middle;
             border-bottom: 1px solid #f1f5f9;
+            font-size: 0.92rem;
         }
 
-        .badge-soft-primary { background: #eef2ff; color: #4f46e5; font-weight: 600; }
-        .badge-soft-cyan    { background: #ecfeff; color: #0891b2; font-weight: 600; }
-        .badge-soft-success { background: #ecfdf5; color: #059669; font-weight: 600; }
-        .badge-soft-warning { background: #fffbeb; color: #d97706; font-weight: 600; }
-        .badge-soft-danger  { background: #fef2f2; color: #dc2626; font-weight: 600; }
+        .badge-soft-primary { background: #fff0ec; color: #e54e2e; font-weight: 700; border-radius: 9999px; padding: 0.35rem 0.75rem; }
+        .badge-soft-cyan    { background: #eff6ff; color: #2563eb; font-weight: 700; border-radius: 9999px; padding: 0.35rem 0.75rem; }
+        .badge-soft-success { background: #ecfdf5; color: #047857; font-weight: 700; border-radius: 9999px; padding: 0.35rem 0.75rem; }
+        .badge-soft-warning { background: #fffbeb; color: #b45309; font-weight: 700; border-radius: 9999px; padding: 0.35rem 0.75rem; }
+        .badge-soft-danger  { background: #fef2f2; color: #dc2626; font-weight: 700; border-radius: 9999px; padding: 0.35rem 0.75rem; }
 
         /* Mobile Backdrop Overlay */
         .sidebar-backdrop {
@@ -215,7 +227,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(15, 23, 42, 0.6);
+            background: rgba(16, 45, 69, 0.6);
             backdrop-filter: blur(4px);
             z-index: 1045;
         }
@@ -252,7 +264,7 @@
                 <i class="fa-solid fa-paper-plane"></i>
             </div>
             <span>TravelBooking</span>
-            <span class="badge bg-primary ms-auto" style="font-size: 0.65rem;">ADMIN</span>
+            <span class="badge ms-auto" style="background: rgba(255,255,255,0.15); font-size: 0.65rem;">ADMIN</span>
         </div>
 
         <ul class="sidebar-menu">
@@ -268,7 +280,7 @@
             <li>
                 <a href="{{ route('admin.users.index') }}" class="sidebar-link {{ request()->routeIs('admin.users*') ? 'active' : '' }}">
                     <i class="fa-solid fa-users"></i>
-                    <span>User Management</span>
+                    <span>User Accounts</span>
                 </a>
             </li>
             <li>
@@ -322,34 +334,58 @@
             </li>
         </ul>
 
-        <div class="p-3 mt-3 mx-3 rounded-3 bg-dark border border-secondary border-opacity-50 text-light small">
-            <div class="fw-bold text-info"><i class="fa-solid fa-graduation-cap me-1"></i> VU CS619 Viva Ready</div>
-            <div class="opacity-75" style="font-size: 0.78rem;">Supervisor: Sheikh Israr Ahmad</div>
+        <!-- Bottom Admin User Pill (Matching Figma AppShell) -->
+        <div class="p-3 border-top border-white border-opacity-10 mt-auto">
+            <div class="d-flex align-items-center gap-3 px-1">
+                <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 38px; height: 38px; background: #ffe0d8; color: #d94b2d; font-size: 0.88rem;">
+                    {{ strtoupper(substr(auth()->user()->name, 0, 2)) }}
+                </div>
+                <div class="overflow-hidden">
+                    <div class="text-white fw-bold small text-truncate">{{ auth()->user()->name }}</div>
+                    <div class="small opacity-50 text-white" style="font-size: 0.72rem;">Administrator</div>
+                </div>
+            </div>
         </div>
     </aside>
 
     <!-- Main Content Area -->
     <div class="admin-main">
-        <!-- Admin Header -->
+        <!-- Admin Header (Figma Make Header) -->
         <header class="admin-header d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center gap-3">
                 <button class="btn btn-sm btn-outline-secondary d-lg-none" type="button" onclick="toggleSidebar()">
                     <i class="fa-solid fa-bars-staggered"></i>
                 </button>
-                <h5 class="fw-bold mb-0 text-dark">@yield('page_title', 'Administration Panel')</h5>
+                <div>
+                    <div class="text-muted small" style="font-size: 0.72rem;">Welcome back, {{ auth()->user()->name }}</div>
+                    <h5 class="fw-bold mb-0 text-dark">@yield('page_title', 'Administration Panel')</h5>
+                </div>
             </div>
 
             <div class="d-flex align-items-center gap-3">
-                <a href="{{ route('home') }}" class="btn btn-sm btn-outline-primary rounded-pill px-3 d-none d-sm-inline-flex align-items-center gap-1">
+                <div class="position-relative d-none d-md-block">
+                    <i class="fa-solid fa-magnifying-glass position-absolute text-muted" style="left: 14px; top: 11px; font-size: 0.85rem;"></i>
+                    <input type="text" class="form-control form-control-sm border-0 ps-5" placeholder="Search anything..." style="background: #f1f5f9; border-radius: 12px; width: 200px; font-size: 0.88rem;">
+                </div>
+                
+                <div class="position-relative">
+                    <a href="{{ route('admin.reservations.index') }}" class="btn btn-sm bg-white border rounded-3 p-2 text-muted" title="Notifications">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="position-absolute top-0 end-0 p-1 border border-light rounded-circle" style="transform: translate(-30%, 30%); background: #ff6b4a;"></span>
+                    </a>
+                </div>
+
+                <a href="{{ route('home') }}" class="btn btn-sm btn-outline-custom rounded-pill px-3 d-none d-sm-inline-flex align-items-center gap-1">
                     <i class="fa-solid fa-globe"></i> Public Portal
                 </a>
+                
                 <div class="d-flex align-items-center gap-2 border-start ps-3">
-                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 36px; height: 36px; font-size: 0.9rem;">
-                        {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
+                    <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 36px; height: 36px; background: #ffe0d8; color: #d94b2d; font-size: 0.88rem;">
+                        {{ strtoupper(substr(auth()->user()->name, 0, 2)) }}
                     </div>
                     <div class="d-none d-md-block text-start">
                         <div class="fw-bold text-dark small leading-tight">{{ auth()->user()->name }}</div>
-                        <div class="badge bg-danger-subtle text-danger" style="font-size: 0.68rem;">Super Admin</div>
+                        <div class="badge" style="background: #fff0ec; color: #e54e2e; font-size: 0.68rem;">Super Admin</div>
                     </div>
                 </div>
             </div>
