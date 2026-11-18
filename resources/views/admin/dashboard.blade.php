@@ -213,8 +213,8 @@
                             @endif
                         </td>
                         <td class="text-end">
-                            <a href="{{ route('admin.reservations.show', $res->id) }}" class="btn btn-sm btn-outline-secondary rounded-pill py-1 px-3" title="Inspect Booking">
-                                View Details
+                            <a href="{{ route('admin.reservations.show', $res->id) }}" class="btn-detail-figma py-1 px-3" title="Inspect Booking">
+                                <i class="fa-regular fa-eye"></i> Details
                             </a>
                         </td>
                     </tr>

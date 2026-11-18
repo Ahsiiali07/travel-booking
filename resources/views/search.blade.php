@@ -119,9 +119,14 @@
                                 <span class="small text-muted">Per Seat</span>
                                 <div class="fw-bold text-dark fs-5">PKR {{ number_format($flight->price_per_seat) }}</div>
                             </div>
-                            <a href="{{ route('flights.show', $flight->id) }}" class="btn btn-sm btn-outline-custom rounded-pill px-3">
-                                Schedule Ticket
-                            </a>
+                            <div class="d-flex gap-2 align-items-center">
+                                <a href="{{ route('flights.show', $flight->id) }}" class="btn-detail-figma">
+                                    <i class="fa-regular fa-eye"></i> Details
+                                </a>
+                                <a href="{{ route('user.flight-schedules.create', $flight->id) }}" class="btn-book-figma">
+                                    <i class="fa-solid fa-plane"></i> Schedule
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -180,7 +185,14 @@
                                     <div class="small text-muted">{{ $pkg->duration_days }} Days / {{ $pkg->duration_nights }} Nights</div>
                                     <div class="fw-bold fs-5 text-primary">PKR {{ number_format($pkg->final_price) }}</div>
                                 </div>
-                                <a href="{{ route('packages.show', $pkg->id) }}" class="btn btn-sm btn-primary-custom">Book Tour</a>
+                                <div class="d-flex gap-2 align-items-center">
+                                    <a href="{{ route('packages.show', $pkg->id) }}" class="btn-detail-figma">
+                                        <i class="fa-regular fa-eye"></i> Details
+                                    </a>
+                                    <a href="{{ route('user.package-bookings.create', $pkg->id) }}" class="btn-book-figma">
+                                        <i class="fa-solid fa-umbrella-beach"></i> Book Tour
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -244,7 +256,14 @@
                                     <div class="small text-muted">Per Night</div>
                                     <div class="fw-bold fs-5 text-dark">PKR {{ number_format($hotel->price_per_night) }}</div>
                                 </div>
-                                <a href="{{ route('hotels.show', $hotel->id) }}" class="btn btn-sm btn-outline-custom rounded-pill px-3">View Room</a>
+                                <div class="d-flex gap-2 align-items-center">
+                                    <a href="{{ route('hotels.show', $hotel->id) }}" class="btn-detail-figma">
+                                        <i class="fa-regular fa-eye"></i> Details
+                                    </a>
+                                    <a href="{{ route('user.hotel-schedules.create', $hotel->id) }}" class="btn-book-figma">
+                                        <i class="fa-solid fa-bed"></i> Book Room
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

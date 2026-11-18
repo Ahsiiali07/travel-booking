@@ -294,59 +294,132 @@
             background-color: #fff0ec !important;
         }
 
-        /* Footer (Figma Dark Navy) */
-        .footer {
-            background: #102d45;
-            color: #cbd5e1;
-            margin-top: auto;
-            padding-top: 4rem;
-            padding-bottom: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .footer h5 {
-            color: #ffffff;
-            font-weight: 700;
-            margin-bottom: 1.25rem;
-            font-size: 1rem;
-            font-family: 'Manrope', sans-serif;
-        }
-
-        .footer a {
-            color: #94a3b8;
+        /* Universal Button Styles (Figma Make) */
+        .btn-detail-figma {
+            background: #f8fafc;
+            border: 1.5px solid #e2e8f0;
+            color: #475569;
+            font-weight: 600;
+            font-size: 0.82rem;
+            padding: 0.45rem 1rem;
+            border-radius: 9999px;
             text-decoration: none;
-            transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: all 0.2s ease;
+        }
+        .btn-detail-figma:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            color: #0f172a;
+            transform: translateY(-1px);
         }
 
-        .footer a:hover {
-            color: #ff8b73;
+        .btn-book-figma {
+            background: #ff6b4a;
+            border: 1.5px solid #ff6b4a;
+            color: #ffffff !important;
+            font-weight: 600;
+            font-size: 0.82rem;
+            padding: 0.45rem 1.15rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            box-shadow: 0 4px 12px rgba(255, 107, 74, 0.25);
+            transition: all 0.2s ease;
+        }
+        .btn-book-figma:hover {
+            background: #ee5b3c;
+            border-color: #ee5b3c;
+            color: #ffffff !important;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(255, 107, 74, 0.35);
+        }
+
+        /* Clean Modern Footer (Figma Make Inspired) */
+        .footer {
+            background: #ffffff;
+            color: #64748b;
+            margin-top: auto;
+            padding-top: 3.5rem;
+            padding-bottom: 2.5rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .footer-brand {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: #102a43;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+        }
+
+        .footer-nav-link {
+            color: #64748b;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            transition: all 0.2s ease;
+        }
+
+        .footer-nav-link:hover {
+            color: #ff6b4a;
+            background: #fff0ec;
         }
 
         .vu-project-badge {
-            background: #ff6b4a;
-            color: white;
-            font-size: 0.75rem;
-            padding: 0.4rem 0.85rem;
+            background: #f8fafc;
+            color: #475569;
+            font-size: 0.78rem;
+            padding: 0.45rem 1rem;
             border-radius: 9999px;
             font-weight: 600;
+            border: 1px solid #e2e8f0;
             display: inline-flex;
             align-items: center;
-            gap: 0.45rem;
-            box-shadow: 0 4px 10px rgba(255, 107, 74, 0.3);
+            gap: 0.5rem;
         }
 
-        /* Mobile Responsive Improvements */
+        /* Mobile Responsive Improvements (Figma Make Style) */
         @media (max-width: 991.98px) {
             .navbar-collapse {
                 background: #ffffff;
                 padding: 1.25rem;
-                border-radius: 20px;
-                box-shadow: 0 15px 30px rgba(16, 45, 69, 0.12);
-                margin-top: 0.75rem;
-                border: 1px solid var(--slate-border);
+                border-radius: 24px;
+                box-shadow: 0 20px 45px -10px rgba(16, 45, 69, 0.12);
+                margin-top: 0.85rem;
+                border: 1px solid #e2e8f0;
             }
-            .nav-link {
-                padding: 0.65rem 1rem !important;
+            .main-navbar .navbar-nav .nav-link {
+                padding: 0.7rem 1.1rem !important;
+                border-radius: 14px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 0.65rem;
+                color: #475569;
+                margin-bottom: 0.25rem;
+                transition: all 0.2s ease;
+            }
+            .main-navbar .navbar-nav .nav-link:hover {
+                background-color: #f8fafc;
+                color: #102a43;
+            }
+            .main-navbar .navbar-nav .nav-link.active {
+                background-color: #fff0ec !important;
+                color: #e54e2e !important;
+            }
+            .main-navbar .navbar-nav .nav-link i {
+                width: 20px;
+                text-align: center;
             }
         }
     </style>
@@ -530,72 +603,48 @@
         @yield('content')
     </main>
 
-    <!-- Sleek Modern Footer (Figma Make Theme) -->
+    <!-- Clean Modern Footer (Figma Make Theme) -->
     <footer class="footer">
-        <div class="container">
-            <div class="row g-4 justify-content-between align-items-start mb-5">
-                <div class="col-lg-5 col-md-12">
-                    <div class="d-flex align-items-center gap-2 mb-3">
-                        <div class="brand-icon-wrapper" style="width: 38px; height: 38px; font-size: 1rem; border-radius: 12px; background: #ff6b4a;">
-                            <i class="fa-solid fa-paper-plane"></i>
-                        </div>
-                        <span class="text-white fw-bold fs-4" style="font-family: 'Manrope', sans-serif;">TravelBooking</span>
+        <div class="container text-center">
+            <div class="d-flex flex-column align-items-center justify-content-center mb-4">
+                <a href="{{ route('home') }}" class="footer-brand mb-2">
+                    <div class="brand-icon-wrapper" style="width: 34px; height: 34px; font-size: 0.9rem; border-radius: 10px; background: #ff6b4a;">
+                        <i class="fa-solid fa-paper-plane"></i>
                     </div>
-                    <p class="text-light opacity-75 small leading-relaxed mb-4" style="max-width: 420px;">
-                        Curated journeys, made personal. Thoughtfully planned vacation packages, extraordinary hotel stays, and seamless flight bookings across Pakistan and international destinations.
-                    </p>
-                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill" style="background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.15); font-size: 0.8rem;">
-                        <span style="width: 8px; height: 8px; border-radius: 50%; background: #ffb64d; display: inline-block;"></span>
-                        <span class="text-white fw-semibold">Virtual University of Pakistan</span>
-                        <span class="opacity-50 text-white">&bull;</span>
-                        <span class="text-warning fw-bold">CS619 Final Year Project</span>
-                    </div>
+                    <span>TravelBooking</span>
+                </a>
+                <p class="text-muted small mb-3" style="max-width: 520px;">
+                    Curated journeys, made personal. Extraordinary hotel stays, scheduled domestic flights, and unforgettable tour packages across Pakistan.
+                </p>
+
+                <!-- Clean Nav Links -->
+                <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
+                    <a href="{{ route('home') }}" class="footer-nav-link">Home</a>
+                    <a href="{{ route('flights.index') }}" class="footer-nav-link">Flights</a>
+                    <a href="{{ route('hotels.index') }}" class="footer-nav-link">Hotels</a>
+                    <a href="{{ route('packages.index') }}" class="footer-nav-link">Packages</a>
+                    <a href="{{ route('search') }}" class="footer-nav-link">Search</a>
+                    <a href="{{ route('admin.login') }}" class="footer-nav-link text-muted">Admin Portal</a>
                 </div>
 
-                <div class="col-lg-3 col-6">
-                    <h6 class="text-white fw-bold text-uppercase small mb-3" style="letter-spacing: 0.08em; font-family: 'Manrope', sans-serif;">Services & Explore</h6>
-                    <ul class="list-unstyled small mb-0 d-flex flex-column gap-2">
-                        <li><a href="{{ route('home') }}" class="footer-link"><i class="fa-solid fa-angle-right me-1" style="color: #ff6b4a;"></i> Home Overview</a></li>
-                        <li><a href="{{ route('flights.index') }}" class="footer-link"><i class="fa-solid fa-angle-right me-1" style="color: #ff6b4a;"></i> Scheduled Flights</a></li>
-                        <li><a href="{{ route('hotels.index') }}" class="footer-link"><i class="fa-solid fa-angle-right me-1" style="color: #ff6b4a;"></i> Partner Hotels</a></li>
-                        <li><a href="{{ route('packages.index') }}" class="footer-link"><i class="fa-solid fa-angle-right me-1" style="color: #ff6b4a;"></i> Tour Packages</a></li>
-                        <li><a href="{{ route('search') }}" class="footer-link"><i class="fa-solid fa-angle-right me-1" style="color: #ff6b4a;"></i> Search & Filters</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <h6 class="text-white fw-bold text-uppercase small mb-3" style="letter-spacing: 0.08em; font-family: 'Manrope', sans-serif;">Academic Project Info</h6>
-                    <div class="p-3 rounded-4" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
-                        <div class="d-flex align-items-center gap-2 mb-2">
-                            <i class="fa-solid fa-user-tie" style="color: #ffb64d;"></i>
-                            <div class="small fw-bold text-white">Supervisor: Sheikh Israr Ahmad</div>
-                        </div>
-                        <div class="small text-light opacity-75 mb-1">
-                            <i class="fa-solid fa-envelope me-1" style="color: #ff8b73;"></i> <a href="mailto:israr.ahmad@vu.edu.pk" class="text-light opacity-90 text-decoration-none">israr.ahmad@vu.edu.pk</a>
-                        </div>
-                        <div class="small text-light opacity-60">
-                            MVC Architecture &bull; Laravel 12 &bull; MySQL &bull; Bootstrap 5
-                        </div>
-                    </div>
-                    <div class="mt-3 d-flex align-items-center gap-2">
-                        <a href="{{ route('user.dashboard') }}" class="btn btn-sm rounded-pill px-3 fw-bold text-white" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); font-size: 0.8rem;">
-                            <i class="fa-solid fa-user me-1 text-warning"></i> User Portal
-                        </a>
-                        <a href="{{ route('admin.login') }}" class="btn btn-sm rounded-pill px-3 fw-bold text-white" style="background: rgba(255, 107, 74, 0.2); border: 1px solid rgba(255, 107, 74, 0.4); color: #ff8b73 !important; font-size: 0.8rem;">
-                            <i class="fa-solid fa-lock me-1"></i> Admin Portal
-                        </a>
-                    </div>
+                <!-- Academic Info Pill -->
+                <div class="vu-project-badge mb-3">
+                    <span style="width: 7px; height: 7px; border-radius: 50%; background: #ff6b4a; display: inline-block;"></span>
+                    <span>Virtual University of Pakistan &bull; CS619 Final Year Project</span>
+                    <span class="text-muted">&bull;</span>
+                    <span class="text-dark fw-bold">Supervisor: Sheikh Israr Ahmad</span>
+                    <a href="mailto:israr.ahmad@vu.edu.pk" class="text-muted text-decoration-none ms-1"><i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
 
-            <div class="pt-4 border-top d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 small text-light opacity-60" style="border-color: rgba(255, 255, 255, 0.1) !important;">
+            <div class="pt-3 border-top d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small text-muted" style="border-color: #f1f5f9 !important; font-size: 0.82rem;">
                 <div>
-                    &copy; {{ date('Y') }} <strong>TravelBooking</strong> &bull; Designed for your next great story. Virtual University CS619.
+                    &copy; {{ date('Y') }} <strong>TravelBooking</strong> &bull; Designed for your next great story.
                 </div>
-                <div class="d-flex gap-3">
+                <div class="d-flex gap-3 text-muted">
                     <span>Clean MVC Architecture</span>
                     <span>&bull;</span>
-                    <span>All Rights Reserved</span>
+                    <span>Laravel 12 &bull; MySQL</span>
                 </div>
             </div>
         </div>

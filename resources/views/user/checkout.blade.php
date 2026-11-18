@@ -22,8 +22,8 @@
                         <span class="badge bg-secondary me-1">Testing Card</span>
                         <code>4242 &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 4242</code> (CVV: 123)
                     </div>
-                    <button type="button" class="btn btn-sm btn-outline-success" onclick="fillTestCard()">
-                        <i class="fa-solid fa-wand-magic-sparkles me-1"></i> Auto Fill Test Card
+                    <button type="button" class="btn-detail-figma px-3" onclick="fillTestCard()">
+                        <i class="fa-solid fa-wand-magic-sparkles text-success me-1"></i> Auto Fill Test Card
                     </button>
                 </div>
 

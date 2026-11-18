@@ -69,14 +69,14 @@
                                 @endif
                             </td>
                             <td class="text-end pe-4">
-                                <div class="d-inline-flex gap-1">
+                                <div class="d-inline-flex gap-2 align-items-center">
                                     @if($booking->payment_status === 'unpaid')
-                                        <a href="{{ route('user.checkout', $booking->id) }}" class="btn btn-sm btn-success py-1 px-2" title="Complete Payment">
-                                            <i class="fa-solid fa-credit-card"></i> Pay
+                                        <a href="{{ route('user.checkout', $booking->id) }}" class="btn-book-figma py-1 px-3" title="Complete Payment">
+                                            <i class="fa-solid fa-credit-card"></i> Pay Now
                                         </a>
                                     @endif
 
-                                    <a href="{{ route('user.package-bookings.show', $booking->id) }}" class="btn btn-sm btn-outline-success py-1 px-2" title="View Tour Itinerary & Voucher">
+                                    <a href="{{ route('user.package-bookings.show', $booking->id) }}" class="btn-detail-figma py-1 px-2" title="View Tour Itinerary & Voucher">
                                         <i class="fa-solid fa-map-location-dot"></i> Itinerary
                                     </a>
 
@@ -84,7 +84,7 @@
                                         <form action="{{ route('user.package-bookings.destroy', $booking->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to cancel this vacation package booking?')">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-outline-danger py-1 px-2" title="Cancel Booking">
+                                            <button type="submit" class="btn btn-sm btn-outline-danger rounded-pill py-1 px-2" title="Cancel Booking">
                                                 <i class="fa-solid fa-trash-can"></i>
                                             </button>
                                         </form>

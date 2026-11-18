@@ -97,7 +97,7 @@
                             <i class="fa-solid fa-right-to-bracket me-1"></i> Log In to Book Room
                         </a>
                     @endauth
-                    <a href="{{ route('hotels.index') }}" class="btn btn-outline-secondary py-2">
+                    <a href="{{ route('hotels.index') }}" class="btn-detail-figma py-2 justify-content-center">
                         <i class="fa-solid fa-arrow-left me-1"></i> Back to Hotels
                     </a>
                 </div>

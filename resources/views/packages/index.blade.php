@@ -50,9 +50,13 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="d-flex gap-2">
-                                <a href="{{ route('packages.show', $pkg->id) }}" class="btn btn-sm btn-outline-secondary rounded-pill px-3">Details</a>
-                                <a href="{{ route('user.package-bookings.create', $pkg->id) }}" class="btn btn-sm btn-primary-custom">Book Tour</a>
+                            <div class="d-flex gap-2 align-items-center">
+                                <a href="{{ route('packages.show', $pkg->id) }}" class="btn-detail-figma">
+                                    <i class="fa-regular fa-eye"></i> Details
+                                </a>
+                                <a href="{{ route('user.package-bookings.create', $pkg->id) }}" class="btn-book-figma">
+                                    <i class="fa-solid fa-umbrella-beach"></i> Book Tour
+                                </a>
                             </div>
                         </div>
                     </div>

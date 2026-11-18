@@ -74,14 +74,14 @@
                                 @endif
                             </td>
                             <td class="text-end pe-4">
-                                <div class="d-inline-flex gap-1">
+                                <div class="d-inline-flex gap-2 align-items-center">
                                     @if($schedule->payment_status === 'unpaid')
-                                        <a href="{{ route('user.checkout', $schedule->id) }}" class="btn btn-sm btn-success py-1 px-2" title="Complete Payment">
-                                            <i class="fa-solid fa-credit-card"></i> Pay
+                                        <a href="{{ route('user.checkout', $schedule->id) }}" class="btn-book-figma py-1 px-3" title="Complete Payment">
+                                            <i class="fa-solid fa-credit-card"></i> Pay Now
                                         </a>
                                     @endif
 
-                                    <a href="{{ route('user.flight-schedules.show', $schedule->id) }}" class="btn btn-sm btn-outline-primary py-1 px-2" title="View Boarding Pass / Ticket">
+                                    <a href="{{ route('user.flight-schedules.show', $schedule->id) }}" class="btn-detail-figma py-1 px-2" title="View Boarding Pass / Ticket">
                                         <i class="fa-solid fa-ticket"></i> Ticket
                                     </a>
 
@@ -89,7 +89,7 @@
                                         <form action="{{ route('user.flight-schedules.destroy', $schedule->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to cancel this flight schedule? If already paid, you can submit a refund request.')">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-outline-danger py-1 px-2" title="Cancel Flight Schedule">
+                                            <button type="submit" class="btn btn-sm btn-outline-danger rounded-pill py-1 px-2" title="Cancel Flight Schedule">
                                                 <i class="fa-solid fa-trash-can"></i>
                                             </button>
                                         </form>

@@ -169,28 +169,28 @@
                                 @endif
                             </td>
                             <td class="text-end pe-4">
-                                <div class="d-inline-flex gap-1">
+                                <div class="d-inline-flex gap-2 align-items-center">
                                     @if($res->payment_status === 'unpaid')
-                                        <a href="{{ route('user.checkout', $res->id) }}" class="btn btn-sm btn-success py-1 px-2" title="Pay Now">
-                                            <i class="fa-solid fa-credit-card"></i> Pay
+                                        <a href="{{ route('user.checkout', $res->id) }}" class="btn-book-figma py-1 px-3" title="Pay Now">
+                                            <i class="fa-solid fa-credit-card"></i> Pay Now
                                         </a>
                                     @else
-                                        <a href="{{ route('user.invoice', $res->id) }}" class="btn btn-sm btn-outline-dark py-1 px-2" title="View Invoice">
-                                            <i class="fa-solid fa-file-invoice"></i>
+                                        <a href="{{ route('user.invoice', $res->id) }}" class="btn-detail-figma py-1 px-2" title="View Invoice">
+                                            <i class="fa-solid fa-file-invoice"></i> Invoice
                                         </a>
                                     @endif
 
                                     @if($res->type === 'flight')
-                                        <a href="{{ route('user.flight-schedules.show', $res->id) }}" class="btn btn-sm btn-outline-primary py-1 px-2" title="View Ticket">
-                                            <i class="fa-solid fa-ticket"></i>
+                                        <a href="{{ route('user.flight-schedules.show', $res->id) }}" class="btn-detail-figma py-1 px-2" title="View Ticket">
+                                            <i class="fa-solid fa-ticket"></i> Ticket
                                         </a>
                                     @elseif($res->type === 'hotel')
-                                        <a href="{{ route('user.hotel-schedules.show', $res->id) }}" class="btn btn-sm btn-outline-warning py-1 px-2 text-dark" title="View Voucher">
-                                            <i class="fa-solid fa-hotel"></i>
+                                        <a href="{{ route('user.hotel-schedules.show', $res->id) }}" class="btn-detail-figma py-1 px-2" title="View Voucher">
+                                            <i class="fa-solid fa-hotel"></i> Voucher
                                         </a>
                                     @else
-                                        <a href="{{ route('user.package-bookings.show', $res->id) }}" class="btn btn-sm btn-outline-success py-1 px-2" title="View Tour Voucher">
-                                            <i class="fa-solid fa-map-location-dot"></i>
+                                        <a href="{{ route('user.package-bookings.show', $res->id) }}" class="btn-detail-figma py-1 px-2" title="View Tour Voucher">
+                                            <i class="fa-solid fa-map-location-dot"></i> Voucher
                                         </a>
                                     @endif
                                 </div>

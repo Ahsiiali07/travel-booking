@@ -23,7 +23,7 @@
             <h3 class="fw-bold text-dark mt-1 mb-0">Booking Invoice & Payment Receipt</h3>
         </div>
         <div class="d-flex gap-2">
-            <button onclick="window.print()" class="btn btn-outline-dark btn-sm rounded-pill px-3">
+            <button onclick="window.print()" class="btn-detail-figma px-3">
                 <i class="fa-solid fa-print me-1"></i> Print Invoice
             </button>
             @if($reservation->type === 'flight')

@@ -792,9 +792,14 @@
                                 <span class="small text-muted">Per Seat</span>
                                 <div class="fw-bold text-dark fs-5">PKR {{ number_format($flight->price_per_seat) }}</div>
                             </div>
-                            <a href="{{ route('flights.show', $flight->id) }}" class="btn btn-sm btn-outline-custom rounded-pill px-3">
-                                Schedule Flight
-                            </a>
+                            <div class="d-flex gap-2 align-items-center">
+                                <a href="{{ route('flights.show', $flight->id) }}" class="btn-detail-figma">
+                                    <i class="fa-regular fa-eye"></i> Details
+                                </a>
+                                <a href="{{ route('user.flight-schedules.create', $flight->id) }}" class="btn-book-figma">
+                                    <i class="fa-solid fa-plane"></i> Schedule
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -857,9 +862,14 @@
                                         @endif
                                     </div>
                                 </div>
-                                <a href="{{ route('packages.show', $pkg->id) }}" class="btn btn-sm btn-primary-custom">
-                                    View Details <i class="fa-solid fa-angle-right ms-1"></i>
-                                </a>
+                                <div class="d-flex gap-2 align-items-center">
+                                    <a href="{{ route('packages.show', $pkg->id) }}" class="btn-detail-figma">
+                                        <i class="fa-regular fa-eye"></i> Details
+                                    </a>
+                                    <a href="{{ route('user.package-bookings.create', $pkg->id) }}" class="btn-book-figma">
+                                        <i class="fa-solid fa-umbrella-beach"></i> Book Tour
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

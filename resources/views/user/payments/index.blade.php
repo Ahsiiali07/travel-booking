@@ -66,7 +66,7 @@
                             </td>
                             <td class="text-end pe-4">
                                 @if($payment->reservation)
-                                    <a href="{{ route('user.invoice', $payment->reservation->id) }}" class="btn btn-sm btn-outline-primary py-1 px-3">
+                                    <a href="{{ route('user.invoice', $payment->reservation->id) }}" class="btn-detail-figma py-1 px-3">
                                         <i class="fa-solid fa-file-invoice me-1"></i> Invoice
                                     </a>
                                 @endif

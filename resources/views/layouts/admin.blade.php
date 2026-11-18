@@ -108,33 +108,84 @@
         .sidebar-link {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            color: rgba(255, 255, 255, 0.65);
-            padding: 0.7rem 0.95rem;
-            border-radius: 12px;
+            gap: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.75rem 1rem;
+            border-radius: 14px;
             text-decoration: none;
             font-weight: 500;
             font-size: 0.92rem;
-            transition: all 0.2s ease;
-            margin-bottom: 0.25rem;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-bottom: 0.3rem;
         }
 
         .sidebar-link:hover {
             color: #ffffff;
-            background: rgba(255, 255, 255, 0.07);
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(2px);
         }
 
         .sidebar-link.active {
             color: #ffffff;
             background: #ff6b4a;
             font-weight: 600;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 14px rgba(255, 107, 74, 0.35);
         }
 
         .sidebar-link i {
-            width: 18px;
-            text-align: center;
+            width: 22px;
+            height: 22px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             font-size: 0.95rem;
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        /* Figma Make Detail & Action Buttons */
+        .btn-detail-figma {
+            background: #f8fafc;
+            border: 1.5px solid #e2e8f0;
+            color: #475569;
+            font-weight: 600;
+            font-size: 0.82rem;
+            padding: 0.42rem 0.95rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: all 0.2s ease;
+        }
+        .btn-detail-figma:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            color: #0f172a;
+            transform: translateY(-1px);
+        }
+
+        .btn-book-figma {
+            background: #ff6b4a;
+            border: 1.5px solid #ff6b4a;
+            color: #ffffff !important;
+            font-weight: 600;
+            font-size: 0.82rem;
+            padding: 0.42rem 1.1rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            box-shadow: 0 4px 12px rgba(255, 107, 74, 0.25);
+            transition: all 0.2s ease;
+        }
+        .btn-book-figma:hover {
+            background: #ee5b3c;
+            border-color: #ee5b3c;
+            color: #ffffff !important;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(255, 107, 74, 0.35);
         }
 
         /* Layout Structure */
@@ -218,6 +269,53 @@
         .badge-soft-success { background: #ecfdf5; color: #047857; font-weight: 700; border-radius: 9999px; padding: 0.35rem 0.75rem; }
         .badge-soft-warning { background: #fffbeb; color: #b45309; font-weight: 700; border-radius: 9999px; padding: 0.35rem 0.75rem; }
         .badge-soft-danger  { background: #fef2f2; color: #dc2626; font-weight: 700; border-radius: 9999px; padding: 0.35rem 0.75rem; }
+
+        /* Modern Table Action Buttons */
+        .table-admin .btn-outline-info,
+        .table-admin .btn-outline-primary,
+        .table-admin .btn-outline-danger {
+            border-radius: 9999px;
+            padding: 0.32rem 0.65rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .table-admin .btn-outline-info {
+            color: #475569 !important;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+        .table-admin .btn-outline-info:hover {
+            background: #f1f5f9;
+            color: #0f172a !important;
+            border-color: #cbd5e1;
+            transform: translateY(-1px);
+        }
+        .table-admin .btn-outline-primary {
+            color: #e54e2e !important;
+            background: #fff0ec;
+            border: 1px solid #ffd5cc;
+        }
+        .table-admin .btn-outline-primary:hover {
+            background: #ff6b4a;
+            color: #ffffff !important;
+            border-color: #ff6b4a;
+            transform: translateY(-1px);
+        }
+        .table-admin .btn-outline-danger {
+            color: #dc2626 !important;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+        }
+        .table-admin .btn-outline-danger:hover {
+            background: #dc2626;
+            color: #ffffff !important;
+            border-color: #dc2626;
+            transform: translateY(-1px);
+        }
 
         /* Mobile Backdrop Overlay */
         .sidebar-backdrop {

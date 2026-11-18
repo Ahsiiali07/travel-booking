@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <div class="mt-4 text-end">
-                        <button type="submit" class="btn btn-outline-dark"><i class="fa-solid fa-lock me-1"></i> Change Password</button>
+                        <button type="submit" class="btn-detail-figma py-2 px-3"><i class="fa-solid fa-lock me-1"></i> Change Password</button>
                     </div>
                 </form>
             </div>

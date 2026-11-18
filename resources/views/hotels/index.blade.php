@@ -51,9 +51,13 @@
                                 <span class="small text-muted">Per Night</span>
                                 <div class="fw-extrabold text-primary fs-5">PKR {{ number_format($hotel->price_per_night) }}</div>
                             </div>
-                            <div class="d-flex gap-2">
-                                <a href="{{ route('hotels.show', $hotel->id) }}" class="btn btn-sm btn-outline-secondary rounded-pill px-3">Details</a>
-                                <a href="{{ route('user.hotel-schedules.create', $hotel->id) }}" class="btn btn-sm btn-primary-custom">Book Room</a>
+                            <div class="d-flex gap-2 align-items-center">
+                                <a href="{{ route('hotels.show', $hotel->id) }}" class="btn-detail-figma">
+                                    <i class="fa-regular fa-eye"></i> Details
+                                </a>
+                                <a href="{{ route('user.hotel-schedules.create', $hotel->id) }}" class="btn-book-figma">
+                                    <i class="fa-solid fa-bed"></i> Book Room
+                                </a>
                             </div>
                         </div>
                     </div>

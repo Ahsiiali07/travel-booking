@@ -108,9 +108,13 @@
                             <span class="mx-2 d-none d-sm-inline">&bull;</span>
                             <span class="text-success fw-semibold"><i class="fa-solid fa-chair me-1"></i> {{ $flight->available_seats }} seats open</span>
                         </div>
-                        <div class="d-flex gap-2">
-                            <a href="{{ route('flights.show', $flight->id) }}" class="btn btn-sm btn-outline-secondary rounded-pill px-3">Details</a>
-                            <a href="{{ route('user.flight-schedules.create', $flight->id) }}" class="btn btn-sm btn-primary-custom">Schedule Now</a>
+                        <div class="d-flex gap-2 align-items-center">
+                            <a href="{{ route('flights.show', $flight->id) }}" class="btn-detail-figma">
+                                <i class="fa-regular fa-eye"></i> Details
+                            </a>
+                            <a href="{{ route('user.flight-schedules.create', $flight->id) }}" class="btn-book-figma">
+                                <i class="fa-solid fa-plane-departure"></i> Schedule Now
+                            </a>
                         </div>
                     </div>
                 </div>
