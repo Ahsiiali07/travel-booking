@@ -5,9 +5,9 @@
 @push('styles')
 <style>
     .hero-section {
-        background: linear-gradient(180deg, rgba(7, 25, 43, 0.78) 0%, rgba(7, 25, 43, 0.55) 50%, rgba(7, 25, 43, 0.85) 100%),
-                    url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=2000&q=85') center/cover no-repeat;
-        padding: 5rem 0 6rem;
+        background: linear-gradient(90deg, rgba(7, 25, 43, 0.88) 0%, rgba(7, 25, 43, 0.52) 47%, rgba(7, 25, 43, 0.08) 100%),
+                    url('https://images.unsplash.com/photo-1774681972371-d87f13a3996c?auto=format&fit=crop&w=2000&q=88') center/cover no-repeat;
+        padding: 5.5rem 0 6.5rem;
         color: #ffffff;
         position: relative;
     }
@@ -19,11 +19,11 @@
         background: rgba(255, 255, 255, 0.12);
         border: 1px solid rgba(255, 255, 255, 0.25);
         backdrop-filter: blur(10px);
-        padding: 0.45rem 1.1rem;
+        padding: 0.45rem 1.15rem;
         border-radius: 9999px;
-        font-size: 0.75rem;
+        font-size: 0.72rem;
         font-weight: 700;
-        letter-spacing: 0.14em;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
         color: #ffffff;
     }
@@ -38,119 +38,150 @@
 
     .hero-title {
         font-family: 'Manrope', sans-serif;
-        font-size: clamp(2.4rem, 5.2vw, 4.3rem);
-        line-height: 1.05;
+        font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+        line-height: 1.04;
         font-weight: 700;
         letter-spacing: -0.04em;
         color: #ffffff;
         margin-top: 1.25rem;
         margin-bottom: 1.25rem;
+        max-width: 820px;
     }
 
-    /* Floating Search Card matching Figma / User Reference Screenshot */
+    .hero-subtitle {
+        font-size: 1.15rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.85);
+        max-width: 650px;
+        font-weight: 400;
+    }
+
+    /* Horizontal Search Card (Figma Make Exact Style) */
     .hero-search-card {
         background: #ffffff;
-        border-radius: 28px;
-        box-shadow: 0 25px 65px -15px rgba(0, 0, 0, 0.38), 0 10px 25px -5px rgba(0, 0, 0, 0.18);
-        padding: 2rem 2.2rem;
-        margin: 2.5rem auto 0;
-        max-width: 590px;
+        border-radius: 24px;
+        box-shadow: 0 25px 60px -15px rgba(7, 25, 43, 0.35), 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+        padding: 0.95rem;
+        margin-top: 2.75rem;
         border: 1px solid rgba(255, 255, 255, 0.95);
-        text-align: left;
+        max-width: 1040px;
     }
 
     .hero-search-card .nav-pills {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 0.5rem;
-        margin-bottom: 0.75rem;
-        padding: 0;
-    }
-
-    .hero-search-card .nav-pills .nav-item {
-        flex: 1;
-        text-align: center;
+        gap: 0.45rem;
+        margin-bottom: 0.65rem;
+        padding-left: 0.35rem;
     }
 
     .hero-search-card .nav-pills .nav-link {
         font-weight: 700;
-        font-size: 0.95rem;
-        color: #334155;
-        border-radius: 14px;
-        padding: 0.65rem 1.1rem;
-        width: 100%;
+        font-size: 0.92rem;
+        color: #64748b;
+        border-radius: 12px;
+        padding: 0.65rem 1.15rem;
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        gap: 0.45rem;
-        border: 1px solid transparent;
+        gap: 0.5rem;
+        border: none;
         transition: all 0.2s ease;
         background: transparent;
     }
 
     .hero-search-card .nav-pills .nav-link:hover {
-        background: #f0f9ff;
-        color: #0084c7 !important;
+        background: #f8fafc;
+        color: #102a43;
     }
 
     .hero-search-card .nav-pills .nav-link.active {
-        background-color: #0084c7 !important;
-        color: #ffffff !important;
-        box-shadow: 0 4px 14px rgba(0, 132, 199, 0.35);
+        background-color: #fff0ec !important;
+        color: #e54e2e !important;
+        box-shadow: none;
     }
 
-    .search-card-divider {
-        border-top: 1px solid #e2e8f0;
-        margin: 0.85rem 0 1.5rem;
-        opacity: 0.9;
+    /* Search Field Capsule in #fafaf8 with rounded-2xl */
+    .search-capsule {
+        background: #fafaf8;
+        border: 1px solid #f1f5f9;
+        border-radius: 16px;
+        padding: 0.65rem 1rem;
+        min-height: 64px;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        position: relative;
     }
 
-    .search-input-clean {
-        border: 1.5px solid #e2e8f0;
-        border-radius: 12px;
-        padding: 0.75rem 1rem;
-        font-size: 0.95rem;
-        font-weight: 500;
-        height: 48px;
+    .search-capsule:focus-within {
+        border-color: #ff6b4a;
         background-color: #ffffff;
-        color: #1e293b;
-        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        box-shadow: 0 0 0 3px rgba(255, 107, 74, 0.12);
     }
 
-    .search-input-clean:focus {
-        border-color: #0084c7;
-        box-shadow: 0 0 0 3px rgba(0, 132, 199, 0.16);
-        outline: none;
+    .search-capsule-icon {
+        color: #e85335;
+        font-size: 1.1rem;
+        flex-shrink: 0;
     }
 
-    .btn-search-flights {
-        background-color: #0084c7;
-        color: #ffffff;
-        border-radius: 14px;
-        font-size: 1.05rem;
+    .search-capsule-label {
+        font-size: 0.65rem;
         font-weight: 700;
-        padding: 0.85rem 1.5rem;
-        height: 52px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #94a3b8;
+        margin-bottom: 2px;
+        line-height: 1;
+    }
+
+    .search-capsule-input {
         border: none;
-        box-shadow: 0 6px 20px rgba(0, 132, 199, 0.35);
-        transition: all 0.2s ease;
-        display: inline-flex;
+        background: transparent;
+        padding: 0;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #102a43;
+        width: 100%;
+        outline: none;
+        box-shadow: none !important;
+    }
+
+    .search-capsule-input::placeholder {
+        color: #94a3b8;
+        font-weight: 500;
+    }
+
+    .btn-search-figma {
+        background: #ff6b4a;
+        color: #ffffff;
+        border: none;
+        border-radius: 16px;
+        font-weight: 700;
+        font-size: 1.05rem;
+        padding: 0 2rem;
+        min-height: 64px;
+        width: 100%;
+        display: flex;
         align-items: center;
         justify-content: center;
-        gap: 0.5rem;
+        gap: 0.55rem;
+        box-shadow: 0 4px 14px rgba(255, 107, 74, 0.35);
+        transition: all 0.25s ease;
     }
 
-    .btn-search-flights:hover {
-        background-color: #0073b0;
-        color: #ffffff;
+    .btn-search-figma:hover {
+        background: #ee5b3c;
         transform: translateY(-1px);
-        box-shadow: 0 8px 25px rgba(0, 132, 199, 0.45);
+        box-shadow: 0 8px 22px rgba(255, 107, 74, 0.45);
+        color: #ffffff;
     }
 
+    /* Destination Card (Figma Make Exact Match: 440px height, rounded-[26px], heart button) */
     .destination-card-figma {
         position: relative;
-        height: 420px;
+        height: 440px;
         border-radius: 26px;
         overflow: hidden;
         border: none;
@@ -158,6 +189,61 @@
         text-decoration: none;
         box-shadow: 0 10px 25px rgba(16, 45, 69, 0.08);
         transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .destination-card-figma:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 35px rgba(16, 45, 69, 0.16);
+    }
+
+    .destination-card-figma img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .destination-card-figma:hover img {
+        transform: scale(1.06);
+    }
+
+    .destination-gradient-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(7, 26, 44, 0.08) 0%, rgba(7, 26, 44, 0.3) 50%, rgba(7, 26, 44, 0.9) 100%);
+    }
+
+    .destination-card-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1.75rem;
+        color: #ffffff;
+        z-index: 2;
+    }
+
+    .destination-heart-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(8px);
+        display: grid;
+        place-items: center;
+        color: #ffffff;
+        border: none;
+        z-index: 2;
+        transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .destination-heart-btn:hover {
+        background: rgba(255, 255, 255, 0.35);
+        transform: scale(1.1);
+        color: #ff6b4a;
     }
 
     .destination-card-figma:hover {
@@ -310,20 +396,15 @@
             </div>
         </div>
 
-        <!-- Universal Multi-Tab Search Card (Matching User Screenshot UI) -->
+        <!-- Universal Horizontal Search Card (Figma Make Exact Match) -->
         <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+            <div class="col-12 col-xl-11">
                 <div class="hero-search-card">
                     <!-- Tab Buttons matching user's exact sequence & pill styling -->
                     <ul class="nav nav-pills" id="searchTabs" role="tablist">
                         <li class="nav-item">
-                            <button class="nav-link" id="packages-tab" data-bs-toggle="pill" data-bs-target="#tab-packages" type="button">
-                                <i class="fa-solid fa-umbrella-beach"></i> Vacation Packages
-                            </button>
-                        </li>
-                        <li class="nav-item">
                             <button class="nav-link active" id="flights-tab" data-bs-toggle="pill" data-bs-target="#tab-flights" type="button">
-                                <i class="fa-solid fa-plane"></i> Flights
+                                <i class="fa-solid fa-paper-plane"></i> Flights
                             </button>
                         </li>
                         <li class="nav-item">
@@ -331,155 +412,263 @@
                                 <i class="fa-solid fa-hotel"></i> Hotels
                             </button>
                         </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="packages-tab" data-bs-toggle="pill" data-bs-target="#tab-packages" type="button">
+                                <i class="fa-solid fa-box-archive"></i> Packages
+                            </button>
+                        </li>
                     </ul>
 
-                    <div class="search-card-divider"></div>
-
-                    <div class="tab-content" id="searchTabsContent">
-                        <!-- Tab 1: Flights (Exact match to User Screenshot with Pakistan Airports Dropdown) -->
+                    <div class="tab-content pt-1" id="searchTabsContent">
+                        <!-- Tab 1: Flights (Horizontal 4-Column Grid with Pakistan Airports Dropdown) -->
                         <div class="tab-pane fade show active" id="tab-flights">
-                            <form action="{{ route('search') }}" method="GET" class="d-flex flex-column gap-3">
+                            <form action="{{ route('search') }}" method="GET">
                                 <input type="hidden" name="tab" value="flights">
                                 
-                                <div>
-                                    <x-airport-select 
-                                        name="origin" 
-                                        id="home_flight_origin" 
-                                        label="From (City / Code)" 
-                                        placeholder="e.g. Karachi, Islamabad" 
-                                        icon="fa-plane" 
-                                        iconColor="#0084c7"
-                                        badgeBg="#e0f2fe"
-                                        badgeColor="#0084c7"
-                                    />
-                                </div>
+                                <div class="row g-2 align-items-center">
+                                    <!-- Segment 1: From & To with Pakistan Airports -->
+                                    <div class="col-12 col-lg-5">
+                                        <div class="search-capsule">
+                                            <i class="fa-solid fa-location-dot search-capsule-icon"></i>
+                                            <div class="w-100 position-relative">
+                                                <div class="search-capsule-label">From & To (Pakistan & Hubs)</div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div class="flex-grow-1 position-relative airport-search-wrapper" id="wrapper-h-origin">
+                                                        <input 
+                                                            type="text" 
+                                                            name="origin" 
+                                                            id="home_flight_origin" 
+                                                            class="search-capsule-input airport-search-input" 
+                                                            placeholder="Karachi (KHI)" 
+                                                            autocomplete="off"
+                                                        >
+                                                        <!-- Airports Dropdown Popup -->
+                                                        <div class="airport-dropdown-menu shadow-lg border rounded-4 p-2 bg-white" style="display: none; position: absolute; top: calc(100% + 14px); left: -30px; width: 320px; z-index: 1060; max-height: 280px; overflow-y: auto;">
+                                                            <div class="px-2 py-1 pb-2 border-bottom mb-1 small text-muted d-flex justify-content-between align-items-center">
+                                                                <span class="fw-bold text-uppercase" style="font-size: 0.7rem; color: #64748b;">Origin Airports</span>
+                                                                <span class="badge" style="background: #fff0ec; color: #e54e2e;">PK</span>
+                                                            </div>
+                                                            <div class="airport-options-list">
+                                                                @foreach(config('airports.pakistan', []) as $ap)
+                                                                    <div class="airport-option p-2 rounded-3 d-flex justify-content-between align-items-center cursor-pointer" 
+                                                                         data-value="{{ $ap['city'] }} ({{ $ap['code'] }})"
+                                                                         data-city="{{ strtolower($ap['city']) }}"
+                                                                         data-code="{{ strtolower($ap['code']) }}"
+                                                                         data-name="{{ strtolower($ap['name']) }}"
+                                                                         style="cursor: pointer; transition: background-color 0.15s ease;">
+                                                                         <div>
+                                                                             <div class="fw-bold text-dark small">{{ $ap['city'] }}</div>
+                                                                             <div class="text-muted" style="font-size: 0.72rem;">{{ $ap['name'] }}</div>
+                                                                         </div>
+                                                                         <span class="badge font-monospace fw-bold ms-2" style="background: #fff0ec; color: #e54e2e; font-size: 0.75rem;">{{ $ap['code'] }}</span>
+                                                                    </div>
+                                                                @endforeach
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-                                <div>
-                                    <x-airport-select 
-                                        name="destination" 
-                                        id="home_flight_dest" 
-                                        label="To (City / Code)" 
-                                        placeholder="e.g. Skardu, Dubai" 
-                                        icon="fa-plane-arrival" 
-                                        iconColor="#0084c7"
-                                        badgeBg="#e0f2fe"
-                                        badgeColor="#0084c7"
-                                    />
-                                </div>
+                                                    <span class="text-muted small fw-bold px-1" style="color: #ff6b4a !important;">&rarr;</span>
 
-                                <div>
-                                    <label class="form-label fw-bold mb-2 d-flex align-items-center gap-2" style="color: #334155; font-size: 0.95rem;">
-                                        <i class="fa-solid fa-calendar-days" style="color: #0084c7; font-size: 1rem;"></i>
-                                        <span>Departure Date</span>
-                                    </label>
-                                    <input 
-                                        type="date" 
-                                        name="flight_date" 
-                                        class="form-control search-input-clean" 
-                                        min="{{ date('Y-m-d') }}"
-                                    >
-                                </div>
+                                                    <div class="flex-grow-1 position-relative airport-search-wrapper" id="wrapper-h-dest">
+                                                        <input 
+                                                            type="text" 
+                                                            name="destination" 
+                                                            id="home_flight_dest" 
+                                                            class="search-capsule-input airport-search-input" 
+                                                            placeholder="Islamabad (ISB)" 
+                                                            autocomplete="off"
+                                                        >
+                                                        <!-- Destination Dropdown Popup -->
+                                                        <div class="airport-dropdown-menu shadow-lg border rounded-4 p-2 bg-white" style="display: none; position: absolute; top: calc(100% + 14px); right: 0; width: 320px; z-index: 1060; max-height: 280px; overflow-y: auto;">
+                                                            <div class="px-2 py-1 pb-2 border-bottom mb-1 small text-muted d-flex justify-content-between align-items-center">
+                                                                <span class="fw-bold text-uppercase" style="font-size: 0.7rem; color: #64748b;">Destination Airports</span>
+                                                                <span class="badge" style="background: #fff0ec; color: #e54e2e;">HUB</span>
+                                                            </div>
+                                                            <div class="airport-options-list">
+                                                                @foreach(config('airports.pakistan', []) as $ap)
+                                                                    <div class="airport-option p-2 rounded-3 d-flex justify-content-between align-items-center cursor-pointer" 
+                                                                         data-value="{{ $ap['city'] }} ({{ $ap['code'] }})"
+                                                                         data-city="{{ strtolower($ap['city']) }}"
+                                                                         data-code="{{ strtolower($ap['code']) }}"
+                                                                         data-name="{{ strtolower($ap['name']) }}"
+                                                                         style="cursor: pointer; transition: background-color 0.15s ease;">
+                                                                         <div>
+                                                                             <div class="fw-bold text-dark small">{{ $ap['city'] }}</div>
+                                                                             <div class="text-muted" style="font-size: 0.72rem;">{{ $ap['name'] }}</div>
+                                                                         </div>
+                                                                         <span class="badge font-monospace fw-bold ms-2" style="background: #fff0ec; color: #e54e2e; font-size: 0.75rem;">{{ $ap['code'] }}</span>
+                                                                    </div>
+                                                                @endforeach
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                <div class="pt-1">
-                                    <button type="submit" class="btn btn-search-flights w-100">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                        <span>Search Flights</span>
-                                    </button>
+                                    <!-- Segment 2: Travel Dates -->
+                                    <div class="col-12 col-sm-6 col-lg-3">
+                                        <div class="search-capsule">
+                                            <i class="fa-solid fa-calendar-days search-capsule-icon"></i>
+                                            <div class="w-100">
+                                                <div class="search-capsule-label">Travel Dates</div>
+                                                <input 
+                                                    type="date" 
+                                                    name="flight_date" 
+                                                    class="search-capsule-input" 
+                                                    min="{{ date('Y-m-d') }}"
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Segment 3: Travelers / Class -->
+                                    <div class="col-12 col-sm-6 col-lg-2">
+                                        <div class="search-capsule">
+                                            <i class="fa-solid fa-users search-capsule-icon"></i>
+                                            <div class="w-100">
+                                                <div class="search-capsule-label">Travelers</div>
+                                                <select name="seat_class" class="search-capsule-input bg-transparent border-0 cursor-pointer">
+                                                    <option value="">2 guests, 1 room</option>
+                                                    <option value="Economy">Economy</option>
+                                                    <option value="Business">Business</option>
+                                                    <option value="First Class">First Class</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Segment 4: Search Button -->
+                                    <div class="col-12 col-lg-2">
+                                        <button type="submit" class="btn btn-search-figma">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                            <span>Search</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
 
-                        <!-- Tab 2: Vacation Packages (Clean Stacked Card Style) -->
-                        <div class="tab-pane fade" id="tab-packages">
-                            <form action="{{ route('search') }}" method="GET" class="d-flex flex-column gap-3">
-                                <input type="hidden" name="tab" value="packages">
-                                
-                                <div>
-                                    <label class="form-label fw-bold mb-2 d-flex align-items-center gap-2" style="color: #334155; font-size: 0.95rem;">
-                                        <i class="fa-solid fa-location-dot" style="color: #0084c7; font-size: 1rem;"></i>
-                                        <span>Destination or Tour Name</span>
-                                    </label>
-                                    <input 
-                                        type="text" 
-                                        name="package_destination" 
-                                        class="form-control search-input-clean" 
-                                        placeholder="e.g. Hunza, Skardu, Murree, Dubai"
-                                    >
-                                </div>
-
-                                <div class="row g-2">
-                                    <div class="col-6">
-                                        <label class="form-label fw-bold mb-2 d-flex align-items-center gap-2" style="color: #334155; font-size: 0.95rem;">
-                                            <i class="fa-solid fa-clock" style="color: #0084c7; font-size: 1rem;"></i>
-                                            <span>Max Duration</span>
-                                        </label>
-                                        <select name="duration" class="form-select search-input-clean">
-                                            <option value="">Any Duration</option>
-                                            <option value="3">Up to 3 Days</option>
-                                            <option value="5">Up to 5 Days</option>
-                                            <option value="7">Up to 7 Days</option>
-                                            <option value="10">Up to 10 Days</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label fw-bold mb-2 d-flex align-items-center gap-2" style="color: #334155; font-size: 0.95rem;">
-                                            <i class="fa-solid fa-wallet" style="color: #0084c7; font-size: 1rem;"></i>
-                                            <span>Max Budget</span>
-                                        </label>
-                                        <input 
-                                            type="number" 
-                                            name="max_package_price" 
-                                            class="form-control search-input-clean" 
-                                            placeholder="e.g. 50000"
-                                        >
-                                    </div>
-                                </div>
-
-                                <div class="pt-1">
-                                    <button type="submit" class="btn btn-search-flights w-100">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                        <span>Search Packages</span>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-
-                        <!-- Tab 3: Hotels (Clean Stacked Card Style) -->
+                        <!-- Tab 2: Hotels (Horizontal Layout) -->
                         <div class="tab-pane fade" id="tab-hotels">
-                            <form action="{{ route('search') }}" method="GET" class="d-flex flex-column gap-3">
+                            <form action="{{ route('search') }}" method="GET">
                                 <input type="hidden" name="tab" value="hotels">
                                 
-                                <div>
-                                    <label class="form-label fw-bold mb-2 d-flex align-items-center gap-2" style="color: #334155; font-size: 0.95rem;">
-                                        <i class="fa-solid fa-city" style="color: #0084c7; font-size: 1rem;"></i>
-                                        <span>City or Hotel Name</span>
-                                    </label>
-                                    <input 
-                                        type="text" 
-                                        name="hotel_city" 
-                                        class="form-control search-input-clean" 
-                                        placeholder="e.g. Islamabad, Lahore, Hunza, Skardu"
-                                    >
-                                </div>
+                                <div class="row g-2 align-items-center">
+                                    <div class="col-12 col-lg-5">
+                                        <div class="search-capsule">
+                                            <i class="fa-solid fa-hotel search-capsule-icon"></i>
+                                            <div class="w-100">
+                                                <div class="search-capsule-label">Destination / Hotel</div>
+                                                <input 
+                                                    type="text" 
+                                                    name="hotel_city" 
+                                                    class="search-capsule-input" 
+                                                    placeholder="Lahore, Islamabad, Hunza, Skardu..."
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                <div>
-                                    <label class="form-label fw-bold mb-2 d-flex align-items-center gap-2" style="color: #334155; font-size: 0.95rem;">
-                                        <i class="fa-solid fa-star" style="color: #0084c7; font-size: 1rem;"></i>
-                                        <span>Minimum Star Rating</span>
-                                    </label>
-                                    <select name="star_rating" class="form-select search-input-clean">
-                                        <option value="">Any Star Rating</option>
-                                        <option value="5">5 Stars Luxury</option>
-                                        <option value="4">4 Stars & Above</option>
-                                        <option value="3">3 Stars & Above</option>
-                                    </select>
-                                </div>
+                                    <div class="col-12 col-sm-6 col-lg-3">
+                                        <div class="search-capsule">
+                                            <i class="fa-solid fa-calendar-days search-capsule-icon"></i>
+                                            <div class="w-100">
+                                                <div class="search-capsule-label">Check-In Date</div>
+                                                <input 
+                                                    type="date" 
+                                                    name="check_in" 
+                                                    class="search-capsule-input" 
+                                                    min="{{ date('Y-m-d') }}"
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                <div class="pt-1">
-                                    <button type="submit" class="btn btn-search-flights w-100">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                        <span>Search Hotels</span>
-                                    </button>
+                                    <div class="col-12 col-sm-6 col-lg-2">
+                                        <div class="search-capsule">
+                                            <i class="fa-solid fa-star search-capsule-icon text-warning"></i>
+                                            <div class="w-100">
+                                                <div class="search-capsule-label">Min Rating</div>
+                                                <select name="star_rating" class="search-capsule-input bg-transparent border-0 cursor-pointer">
+                                                    <option value="">Any Rating</option>
+                                                    <option value="5">5 Stars Luxury</option>
+                                                    <option value="4">4 Stars & Above</option>
+                                                    <option value="3">3 Stars & Above</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-lg-2">
+                                        <button type="submit" class="btn btn-search-figma">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                            <span>Search</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Tab 3: Packages (Horizontal Layout) -->
+                        <div class="tab-pane fade" id="tab-packages">
+                            <form action="{{ route('search') }}" method="GET">
+                                <input type="hidden" name="tab" value="packages">
+                                
+                                <div class="row g-2 align-items-center">
+                                    <div class="col-12 col-lg-5">
+                                        <div class="search-capsule">
+                                            <i class="fa-solid fa-umbrella-beach search-capsule-icon"></i>
+                                            <div class="w-100">
+                                                <div class="search-capsule-label">Tour Destination / Package</div>
+                                                <input 
+                                                    type="text" 
+                                                    name="package_destination" 
+                                                    class="search-capsule-input" 
+                                                    placeholder="Hunza, Skardu, Murree, Swat, Dubai..."
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-sm-6 col-lg-3">
+                                        <div class="search-capsule">
+                                            <i class="fa-solid fa-clock search-capsule-icon"></i>
+                                            <div class="w-100">
+                                                <div class="search-capsule-label">Max Duration</div>
+                                                <select name="duration" class="search-capsule-input bg-transparent border-0 cursor-pointer">
+                                                    <option value="">Any Duration</option>
+                                                    <option value="3">Up to 3 Days</option>
+                                                    <option value="5">Up to 5 Days</option>
+                                                    <option value="7">Up to 7 Days</option>
+                                                    <option value="10">Up to 10 Days</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-sm-6 col-lg-2">
+                                        <div class="search-capsule">
+                                            <i class="fa-solid fa-wallet search-capsule-icon"></i>
+                                            <div class="w-100">
+                                                <div class="search-capsule-label">Max Budget (PKR)</div>
+                                                <input 
+                                                    type="number" 
+                                                    name="max_package_price" 
+                                                    class="search-capsule-input" 
+                                                    placeholder="e.g. 50000"
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-lg-2">
+                                        <button type="submit" class="btn btn-search-figma">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                            <span>Search</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -490,64 +679,70 @@
     </div>
 </section>
 
-<!-- Handpicked Destinations Section (Figma Make Style) -->
-<section class="py-5" style="background-color: #fafaf7;">
-    <div class="container py-3">
+<!-- Handpicked Destinations Section (Figma Make Exact Match: Amalfi Coast, Marina Bay, Madeira) -->
+<section id="destinations" class="py-5" style="background-color: #fafaf7;">
+    <div class="container py-4">
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 gap-3">
             <div>
                 <p class="section-kicker mb-1">Handpicked for you</p>
                 <h2 class="section-title mb-0">Places worth getting lost in</h2>
             </div>
-            <a href="{{ route('packages.index') }}" class="btn btn-sm fw-bold text-decoration-none d-inline-flex align-items-center gap-2" style="color: #e85335;">
+            <a href="{{ route('packages.index') }}" class="btn btn-sm fw-bold text-decoration-none d-inline-flex align-items-center gap-2" style="color: #e85335; font-size: 0.95rem;">
                 Explore all destinations <i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>
 
         <div class="row g-4">
+            <!-- Card 1: Amalfi Coast (From User Screenshot) -->
             <div class="col-lg-4 col-md-6">
-                <a href="{{ route('search', ['tab' => 'packages', 'package_destination' => 'Hunza']) }}" class="destination-card-figma">
-                    <img src="https://images.unsplash.com/photo-1779831859141-452040bc1463?auto=format&fit=crop&w=900&q=85" alt="Hunza Valley">
+                <a href="{{ route('search', ['tab' => 'packages', 'package_destination' => 'Amalfi Coast']) }}" class="destination-card-figma">
+                    <img src="https://images.unsplash.com/photo-1779831859141-452040bc1463?auto=format&fit=crop&w=900&q=85" alt="Amalfi Coast">
                     <div class="destination-gradient-overlay"></div>
                     <button class="destination-heart-btn" type="button" title="Save to favorites">
                         <i class="fa-regular fa-heart"></i>
                     </button>
                     <div class="destination-card-content">
-                        <p class="small text-white-50 mb-1">Gilgit-Baltistan &bull; 8 Curated Stays</p>
-                        <h3 class="fw-bold mb-1 text-white">Hunza Valley</h3>
-                        <p class="fw-semibold mb-0 text-white" style="font-size: 0.95rem;">From PKR 35,000</p>
+                        <p class="small text-white opacity-75 mb-1" style="font-size: 0.82rem;">Italy &bull; 8 curated stays</p>
+                        <h3 class="fw-bold mb-1 text-white" style="font-family: 'Manrope', sans-serif; font-size: 1.85rem;">Amalfi Coast</h3>
+                        <p class="fw-semibold mb-0 text-white" style="font-size: 1rem;">From $1,240 <span class="small opacity-75">(PKR 345,000)</span></p>
                     </div>
                 </a>
             </div>
 
+            <!-- Card 2: Marina Bay (From User Screenshot) -->
             <div class="col-lg-4 col-md-6">
-                <a href="{{ route('search', ['tab' => 'packages', 'package_destination' => 'Skardu']) }}" class="destination-card-figma">
-                    <img src="https://images.unsplash.com/photo-1769939830039-3291f2721e8c?auto=format&fit=crop&w=900&q=85" alt="Skardu Shangrila">
+                <a href="{{ route('search', ['tab' => 'packages', 'package_destination' => 'Marina Bay']) }}" class="destination-card-figma">
+                    <img src="https://images.unsplash.com/photo-1769939830039-3291f2721e8c?auto=format&fit=crop&w=900&q=85" alt="Marina Bay">
                     <div class="destination-gradient-overlay"></div>
                     <button class="destination-heart-btn" type="button" title="Save to favorites">
                         <i class="fa-regular fa-heart"></i>
                     </button>
                     <div class="destination-card-content">
-                        <p class="small text-white-50 mb-1">Karakoram &bull; 12 Curated Stays</p>
-                        <h3 class="fw-bold mb-1 text-white">Skardu & Deosai</h3>
-                        <p class="fw-semibold mb-0 text-white" style="font-size: 0.95rem;">From PKR 42,000</p>
+                        <p class="small text-white opacity-75 mb-1" style="font-size: 0.82rem;">Singapore &bull; 12 curated stays</p>
+                        <h3 class="fw-bold mb-1 text-white" style="font-family: 'Manrope', sans-serif; font-size: 1.85rem;">Marina Bay</h3>
+                        <p class="fw-semibold mb-0 text-white" style="font-size: 1rem;">From $980 <span class="small opacity-75">(PKR 270,000)</span></p>
                     </div>
                 </a>
             </div>
 
+            <!-- Card 3: Madeira (From User Screenshot) -->
             <div class="col-lg-4 col-md-6">
-                <a href="{{ route('search', ['tab' => 'packages', 'package_destination' => 'Dubai']) }}" class="destination-card-figma">
-                    <img src="https://images.unsplash.com/photo-1760535560326-656c93894369?auto=format&fit=crop&w=900&q=85" alt="Dubai & Arabian Coast">
+                <a href="{{ route('search', ['tab' => 'packages', 'package_destination' => 'Madeira']) }}" class="destination-card-figma">
+                    <img src="https://images.unsplash.com/photo-1760535560326-656c93894369?auto=format&fit=crop&w=900&q=85" alt="Madeira">
                     <div class="destination-gradient-overlay"></div>
                     <button class="destination-heart-btn" type="button" title="Save to favorites">
                         <i class="fa-regular fa-heart"></i>
                     </button>
                     <div class="destination-card-content">
-                        <p class="small text-white-50 mb-1">International &bull; 9 Curated Stays</p>
-                        <h3 class="fw-bold mb-1 text-white">Dubai & Emirates</h3>
-                        <p class="fw-semibold mb-0 text-white" style="font-size: 0.95rem;">From PKR 95,000</p>
+                        <p class="small text-white opacity-75 mb-1" style="font-size: 0.82rem;">Portugal &bull; 9 curated stays</p>
+                        <h3 class="fw-bold mb-1 text-white" style="font-family: 'Manrope', sans-serif; font-size: 1.85rem;">Madeira</h3>
+                        <p class="fw-semibold mb-0 text-white" style="font-size: 1rem;">From $860 <span class="small opacity-75">(PKR 240,000)</span></p>
                     </div>
                 </a>
             </div>
+        </div>
+    </div>
+</section>
         </div>
     </div>
 </section>
@@ -775,4 +970,71 @@
         </div>
     </div>
 </section>
+
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function setupAirportPicker(inputId, wrapperId) {
+        const input = document.getElementById(inputId);
+        const wrapper = document.getElementById(wrapperId);
+        if (!input || !wrapper) return;
+        const menu = wrapper.querySelector('.airport-dropdown-menu');
+        if (!menu) return;
+        const options = wrapper.querySelectorAll('.airport-option');
+
+        function openMenu() {
+            document.querySelectorAll('.airport-dropdown-menu').forEach(m => {
+                if (m !== menu) m.style.display = 'none';
+            });
+            menu.style.display = 'block';
+            filter(input.value);
+        }
+
+        function closeMenu() {
+            menu.style.display = 'none';
+        }
+
+        function filter(val) {
+            const term = (val || '').toLowerCase().trim();
+            options.forEach(opt => {
+                const city = opt.getAttribute('data-city') || '';
+                const code = opt.getAttribute('data-code') || '';
+                const name = opt.getAttribute('data-name') || '';
+                if (!term || city.includes(term) || code.includes(term) || name.includes(term)) {
+                    opt.style.display = 'flex';
+                } else {
+                    opt.style.display = 'none';
+                }
+            });
+        }
+
+        input.addEventListener('focus', openMenu);
+        input.addEventListener('click', openMenu);
+        input.addEventListener('input', function() {
+            openMenu();
+            filter(this.value);
+        });
+
+        options.forEach(opt => {
+            opt.addEventListener('mouseenter', function() { this.style.backgroundColor = '#fff0ec'; });
+            opt.addEventListener('mouseleave', function() { this.style.backgroundColor = ''; });
+            opt.addEventListener('click', function(e) {
+                e.stopPropagation();
+                input.value = this.getAttribute('data-value');
+                closeMenu();
+            });
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!wrapper.contains(e.target)) {
+                closeMenu();
+            }
+        });
+    }
+
+    setupAirportPicker('home_flight_origin', 'wrapper-h-origin');
+    setupAirportPicker('home_flight_dest', 'wrapper-h-dest');
+});
+</script>
+@endpush
 @endsection

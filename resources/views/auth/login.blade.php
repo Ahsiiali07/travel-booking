@@ -9,20 +9,20 @@
             <div class="card card-custom border-0 shadow-lg">
                 <div class="card-body p-4 p-md-5">
                     <div class="text-center mb-4">
-                        <div class="bg-primary-subtle text-primary rounded-circle d-inline-flex p-3 mb-2">
-                            <i class="fa-solid fa-user fs-3"></i>
+                        <div class="rounded-4 d-inline-flex p-3 mb-2" style="background: #fff0ec; color: #e54e2e;">
+                            <i class="fa-solid fa-paper-plane fs-3"></i>
                         </div>
-                        <h3 class="fw-bold text-dark">Welcome Back</h3>
+                        <h3 class="fw-bold text-dark" style="font-family: 'Manrope', sans-serif;">Welcome Back</h3>
                         <p class="text-muted small">Log in to manage your flight, hotel & vacation schedules</p>
                     </div>
 
                     <!-- Quick Demo Credentials Fill for Testing / Viva -->
-                    <div class="alert alert-light border small d-flex justify-content-between align-items-center mb-4 rounded-3">
+                    <div class="alert small d-flex justify-content-between align-items-center mb-4 rounded-4" style="background: #fff0ec; border: 1px solid #ffd5cc;">
                         <div>
-                            <span class="badge bg-secondary me-1">Demo User</span>
-                            <code>user@travelbooking.com</code>
+                            <span class="badge text-white me-1" style="background: #e54e2e;">Demo User</span>
+                            <code class="text-dark fw-bold">user@travelbooking.com</code>
                         </div>
-                        <button type="button" class="btn btn-sm btn-outline-primary" onclick="fillUserDemo()">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 9999px; border-color: #ff6b4a; color: #e54e2e;" onclick="fillUserDemo()">
                             <i class="fa-solid fa-wand-magic-sparkles me-1"></i> Auto Fill
                         </button>
                     </div>

@@ -47,9 +47,9 @@
                         value="{{ request('origin') }}" 
                         placeholder="e.g. Karachi, Islamabad" 
                         icon="fa-plane" 
-                        iconColor="#0084c7"
-                        badgeBg="#e0f2fe"
-                        badgeColor="#0084c7"
+                        iconColor="#ff6b4a"
+                        badgeBg="#fff0ec"
+                        badgeColor="#e54e2e"
                     />
                 </div>
 
@@ -61,9 +61,9 @@
                         value="{{ request('destination') }}" 
                         placeholder="e.g. Skardu, Dubai" 
                         icon="fa-plane-arrival" 
-                        iconColor="#0084c7"
-                        badgeBg="#e0f2fe"
-                        badgeColor="#0084c7"
+                        iconColor="#ff6b4a"
+                        badgeBg="#fff0ec"
+                        badgeColor="#e54e2e"
                     />
                 </div>
 

@@ -7,22 +7,22 @@
     <div class="row justify-content-center">
         <div class="col-md-5">
             <div class="card card-custom border-0 shadow-lg">
-                <div class="card-header bg-dark text-white text-center py-4 border-0">
-                    <div class="bg-primary-subtle text-primary rounded-circle d-inline-flex p-3 mb-2">
+                <div class="card-header text-white text-center py-4 border-0" style="background: #102d45;">
+                    <div class="rounded-3 d-inline-flex p-3 mb-2" style="background: rgba(255, 107, 74, 0.2); color: #ff8b73;">
                         <i class="fa-solid fa-shield-halved fs-3"></i>
                     </div>
-                    <h4 class="fw-bold mb-1">TravelBooking Admin</h4>
+                    <h4 class="fw-bold mb-1" style="font-family: 'Manrope', sans-serif;">TravelBooking Admin</h4>
                     <p class="text-light opacity-75 small mb-0">Management Portal &bull; VU CS619 FYP</p>
                 </div>
 
                 <div class="card-body p-4 p-md-5">
                     <!-- Quick Demo Credentials for Viva -->
-                    <div class="alert alert-warning border small d-flex justify-content-between align-items-center mb-4 rounded-3">
+                    <div class="alert small d-flex justify-content-between align-items-center mb-4 rounded-4" style="background: #fff0ec; border: 1px solid #ffd5cc;">
                         <div>
-                            <span class="badge bg-dark me-1">Admin Demo</span>
-                            <code>admin@travelbooking.com</code>
+                            <span class="badge text-white me-1" style="background: #e54e2e;">Admin Demo</span>
+                            <code class="text-dark fw-bold">admin@travelbooking.com</code>
                         </div>
-                        <button type="button" class="btn btn-sm btn-dark" onclick="fillAdminDemo()">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 9999px; border-color: #ff6b4a; color: #e54e2e;" onclick="fillAdminDemo()">
                             <i class="fa-solid fa-wand-magic-sparkles me-1"></i> Auto Fill
                         </button>
                     </div>

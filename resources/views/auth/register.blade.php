@@ -9,10 +9,10 @@
             <div class="card card-custom border-0 shadow-lg">
                 <div class="card-body p-4 p-md-5">
                     <div class="text-center mb-4">
-                        <div class="bg-primary-subtle text-primary rounded-circle d-inline-flex p-3 mb-2">
+                        <div class="rounded-4 d-inline-flex p-3 mb-2" style="background: #fff0ec; color: #e54e2e;">
                             <i class="fa-solid fa-user-plus fs-3"></i>
                         </div>
-                        <h3 class="fw-bold text-dark">Create User Account</h3>
+                        <h3 class="fw-bold text-dark" style="font-family: 'Manrope', sans-serif;">Create User Account</h3>
                         <p class="text-muted small">Register to book flights, hotels, and customized holiday packages</p>
                     </div>
 

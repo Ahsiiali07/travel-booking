@@ -182,6 +182,60 @@
             border-color: rgba(255, 107, 74, 0.3);
         }
 
+        /* Global Bootstrap Color Overrides to Figma Make Brand */
+        .text-primary { color: #ff6b4a !important; }
+        .bg-primary { background-color: #ff6b4a !important; }
+        .border-primary { border-color: #ff6b4a !important; }
+        .bg-primary-subtle { background-color: #fff0ec !important; color: #e54e2e !important; }
+        .btn-primary {
+            background-color: #ff6b4a !important;
+            border-color: #ff6b4a !important;
+            color: #ffffff !important;
+            border-radius: 9999px;
+            font-weight: 600;
+        }
+        .btn-primary:hover {
+            background-color: #ee5b3c !important;
+            border-color: #ee5b3c !important;
+            color: #ffffff !important;
+        }
+        .btn-outline-primary {
+            color: #ff6b4a !important;
+            border-color: #ff6b4a !important;
+            border-radius: 9999px;
+            font-weight: 600;
+        }
+        .btn-outline-primary:hover, .btn-check:checked + .btn-outline-primary {
+            background-color: #ff6b4a !important;
+            border-color: #ff6b4a !important;
+            color: #ffffff !important;
+        }
+        .nav-pills .nav-link {
+            color: #64748b;
+            font-weight: 600;
+            border-radius: 9999px;
+            transition: all 0.2s ease;
+        }
+        .nav-pills .nav-link.active {
+            background-color: #fff0ec !important;
+            color: #e54e2e !important;
+            box-shadow: none !important;
+        }
+        .pagination .page-item.active .page-link {
+            background-color: #ff6b4a !important;
+            border-color: #ff6b4a !important;
+            color: #ffffff !important;
+        }
+        .pagination .page-link {
+            color: #102a43;
+            border-radius: 8px;
+            margin: 0 2px;
+        }
+        .pagination .page-link:hover {
+            color: #ff6b4a;
+            background-color: #fff0ec;
+        }
+
         /* Color Badges (Figma Make Style) */
         .badge-soft-primary { background: #fff0ec; color: #e54e2e; font-weight: 700; border-radius: 9999px; padding: 0.35rem 0.75rem; }
         .badge-soft-cyan    { background: #eff6ff; color: #2563eb; font-weight: 700; border-radius: 9999px; padding: 0.35rem 0.75rem; }
@@ -476,64 +530,73 @@
         @yield('content')
     </main>
 
-    <!-- Footer -->
+    <!-- Sleek Modern Footer (Figma Make Theme) -->
     <footer class="footer">
         <div class="container">
-            <div class="row g-4 mb-4">
-                <div class="col-lg-4 col-md-6">
+            <div class="row g-4 justify-content-between align-items-start mb-5">
+                <div class="col-lg-5 col-md-12">
                     <div class="d-flex align-items-center gap-2 mb-3">
-                        <div class="brand-icon-wrapper" style="width: 32px; height: 32px; font-size: 0.9rem;">
+                        <div class="brand-icon-wrapper" style="width: 38px; height: 38px; font-size: 1rem; border-radius: 12px; background: #ff6b4a;">
                             <i class="fa-solid fa-paper-plane"></i>
                         </div>
-                        <h4 class="text-white fw-bold mb-0">TravelBooking</h4>
+                        <span class="text-white fw-bold fs-4" style="font-family: 'Manrope', sans-serif;">TravelBooking</span>
                     </div>
-                    <p class="small text-light opacity-75 leading-relaxed">
-                        An enterprise-grade MVC-based web application for managing seamless travel bookings, flight schedules, hotel reservations, and curated vacation packages across Pakistan and international routes.
+                    <p class="text-light opacity-75 small leading-relaxed mb-4" style="max-width: 420px;">
+                        Curated journeys, made personal. Thoughtfully planned vacation packages, extraordinary hotel stays, and seamless flight bookings across Pakistan and international destinations.
                     </p>
-                    <div class="vu-project-badge mt-2">
-                        <i class="fa-solid fa-graduation-cap"></i> Virtual University of Pakistan &bull; CS619
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill" style="background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.15); font-size: 0.8rem;">
+                        <span style="width: 8px; height: 8px; border-radius: 50%; background: #ffb64d; display: inline-block;"></span>
+                        <span class="text-white fw-semibold">Virtual University of Pakistan</span>
+                        <span class="opacity-50 text-white">&bull;</span>
+                        <span class="text-warning fw-bold">CS619 Final Year Project</span>
                     </div>
                 </div>
 
-                <div class="col-lg-2 col-md-6">
-                    <h5>Quick Links</h5>
+                <div class="col-lg-3 col-6">
+                    <h6 class="text-white fw-bold text-uppercase small mb-3" style="letter-spacing: 0.08em; font-family: 'Manrope', sans-serif;">Services & Explore</h6>
                     <ul class="list-unstyled small mb-0 d-flex flex-column gap-2">
-                        <li><a href="{{ route('home') }}"><i class="fa-solid fa-angle-right me-1 text-primary"></i> Home</a></li>
-                        <li><a href="{{ route('search') }}"><i class="fa-solid fa-angle-right me-1 text-primary"></i> Search Services</a></li>
-                        <li><a href="{{ route('flights.index') }}"><i class="fa-solid fa-angle-right me-1 text-primary"></i> Pakistan Flights</a></li>
-                        <li><a href="{{ route('hotels.index') }}"><i class="fa-solid fa-angle-right me-1 text-primary"></i> Luxury Hotels</a></li>
-                        <li><a href="{{ route('packages.index') }}"><i class="fa-solid fa-angle-right me-1 text-primary"></i> Vacation Tours</a></li>
+                        <li><a href="{{ route('home') }}" class="footer-link"><i class="fa-solid fa-angle-right me-1" style="color: #ff6b4a;"></i> Home Overview</a></li>
+                        <li><a href="{{ route('flights.index') }}" class="footer-link"><i class="fa-solid fa-angle-right me-1" style="color: #ff6b4a;"></i> Scheduled Flights</a></li>
+                        <li><a href="{{ route('hotels.index') }}" class="footer-link"><i class="fa-solid fa-angle-right me-1" style="color: #ff6b4a;"></i> Partner Hotels</a></li>
+                        <li><a href="{{ route('packages.index') }}" class="footer-link"><i class="fa-solid fa-angle-right me-1" style="color: #ff6b4a;"></i> Tour Packages</a></li>
+                        <li><a href="{{ route('search') }}" class="footer-link"><i class="fa-solid fa-angle-right me-1" style="color: #ff6b4a;"></i> Search & Filters</a></li>
                     </ul>
                 </div>
 
-                <div class="col-lg-3 col-md-6">
-                    <h5>Customer Space</h5>
-                    <ul class="list-unstyled small mb-0 d-flex flex-column gap-2">
-                        <li><a href="{{ route('user.dashboard') }}"><i class="fa-solid fa-angle-right me-1 text-primary"></i> User Dashboard</a></li>
-                        <li><a href="{{ route('user.flight-schedules.index') }}"><i class="fa-solid fa-angle-right me-1 text-primary"></i> Flight Schedules</a></li>
-                        <li><a href="{{ route('user.hotel-schedules.index') }}"><i class="fa-solid fa-angle-right me-1 text-primary"></i> Hotel Vouchers</a></li>
-                        <li><a href="{{ route('user.refunds.index') }}"><i class="fa-solid fa-angle-right me-1 text-primary"></i> Refund Requests</a></li>
-                        <li><a href="{{ route('admin.login') }}"><i class="fa-solid fa-lock me-1 text-warning"></i> Admin Panel</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <h5>Project Supervisor</h5>
-                    <p class="small text-light opacity-80 mb-2 leading-relaxed">
-                        <strong>Sheikh Israr Ahmad</strong><br>
-                        Virtual University of Pakistan<br>
-                        <i class="fa-solid fa-envelope me-1 text-info"></i> israr.ahmad@vu.edu.pk<br>
-                        <i class="fa-brands fa-microsoft me-1 text-info"></i> israr.ahmad.vu@outlooks.com
-                    </p>
-                    <div class="small text-muted border-top border-secondary border-opacity-50 pt-2 mt-2">
-                        Course Code: <strong>CS619 Final Year Project</strong><br>
-                        Architecture: <strong>Laravel 12 (MVC) + MySQL</strong>
+                <div class="col-lg-4 col-md-6">
+                    <h6 class="text-white fw-bold text-uppercase small mb-3" style="letter-spacing: 0.08em; font-family: 'Manrope', sans-serif;">Academic Project Info</h6>
+                    <div class="p-3 rounded-4" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <i class="fa-solid fa-user-tie" style="color: #ffb64d;"></i>
+                            <div class="small fw-bold text-white">Supervisor: Sheikh Israr Ahmad</div>
+                        </div>
+                        <div class="small text-light opacity-75 mb-1">
+                            <i class="fa-solid fa-envelope me-1" style="color: #ff8b73;"></i> <a href="mailto:israr.ahmad@vu.edu.pk" class="text-light opacity-90 text-decoration-none">israr.ahmad@vu.edu.pk</a>
+                        </div>
+                        <div class="small text-light opacity-60">
+                            MVC Architecture &bull; Laravel 12 &bull; MySQL &bull; Bootstrap 5
+                        </div>
+                    </div>
+                    <div class="mt-3 d-flex align-items-center gap-2">
+                        <a href="{{ route('user.dashboard') }}" class="btn btn-sm rounded-pill px-3 fw-bold text-white" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); font-size: 0.8rem;">
+                            <i class="fa-solid fa-user me-1 text-warning"></i> User Portal
+                        </a>
+                        <a href="{{ route('admin.login') }}" class="btn btn-sm rounded-pill px-3 fw-bold text-white" style="background: rgba(255, 107, 74, 0.2); border: 1px solid rgba(255, 107, 74, 0.4); color: #ff8b73 !important; font-size: 0.8rem;">
+                            <i class="fa-solid fa-lock me-1"></i> Admin Portal
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <div class="border-top border-secondary border-opacity-50 pt-3 text-center small text-light opacity-75">
-                &copy; {{ date('Y') }} TravelBooking Application. Built for Virtual University CS619 Final Year Project.
+            <div class="pt-4 border-top d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 small text-light opacity-60" style="border-color: rgba(255, 255, 255, 0.1) !important;">
+                <div>
+                    &copy; {{ date('Y') }} <strong>TravelBooking</strong> &bull; Designed for your next great story. Virtual University CS619.
+                </div>
+                <div class="d-flex gap-3">
+                    <span>Clean MVC Architecture</span>
+                    <span>&bull;</span>
+                    <span>All Rights Reserved</span>
+                </div>
             </div>
         </div>
     </footer>

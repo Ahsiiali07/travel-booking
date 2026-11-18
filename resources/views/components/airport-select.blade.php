@@ -5,9 +5,9 @@
     'placeholder' => 'Select or search Pakistan airport...',
     'label' => null,
     'icon' => 'fa-plane',
-    'iconColor' => '#0084c7',
-    'badgeBg' => '#e0f2fe',
-    'badgeColor' => '#0084c7',
+    'iconColor' => '#ff6b4a',
+    'badgeBg' => '#fff0ec',
+    'badgeColor' => '#e54e2e',
     'clean' => false,
     'required' => false
 ])
